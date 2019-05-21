@@ -1,0 +1,76 @@
+body{  
+    background-color: #282828;    
+}
+h1{
+    
+    text-align: center;
+    color:#fff;
+    font-family:Calibri;
+    font-size: 50px;
+}
+
+h2{
+    text-align: center;
+    color:#fff;
+    font-family:Calibri;
+}
+
+nav{
+    position: static;
+    margin: 10px;
+   padding-left: -100px;
+    width: 95%;
+    height: 50px; 
+    z-index: 1;
+   
+}
+
+ .botao {
+        padding: 10px;
+       
+   border: 1px solid #fff;
+   
+   
+   font-family:courier,arial,helvetica;
+    color: #fff;
+    font-size: 20px;
+    text-decoration:none;
+cursor:pointer;
+float:right;
+}
+
+ .botaoinicairteste {
+        padding: 10px;
+       
+   border: 1px solid #fff;
+   
+   
+   font-family:courier,arial,helvetica;
+    color: #fff;
+    font-size: 20px;
+    text-decoration:none;
+cursor:pointer;
+
+}
+
+h3{
+    text-align: center;
+    color:#fff;
+    font-family:Calibri;
+    
+    
+}
+
+.selectrh select{
+    background-color: transparent;
+    color:#fff;
+    width: 350px; 
+  height: 40px;
+  font-size: 20px;
+    
+}
+.selectrh select option{
+    
+    background-color: #282828;
+}
+
