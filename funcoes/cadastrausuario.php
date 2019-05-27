@@ -34,11 +34,7 @@
 		echo "<br/><a href='../login2.php' class='btn btn-primary'>Fazer Login</a>";    
                 
             }
-            
-            
-            
-            
-            
+        
             
 ?>
 

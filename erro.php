@@ -21,14 +21,14 @@
             
         </nav>    
         
-        <h1>DESCRIÇÃO DO TESTE</h1>
-        <h2>O TESTE DISC É COMPOSTO POR 28 QUADRANTES.<BR> ESCOLHA UMA OPÇÃO QUE MAIS SE PAREÇA COM VOCÊ E UMA QUE MENOS SE ADEQUE AO SEU PERFIL.</h2>
+        <h1>ERRO</h1>
+        <h2> </h2>
        
         <?php
         $id = $_SESSION['usuarioId'];
         $sql2 = mysqli_query($conn, "SELECT rh.nome FROM rh INNER JOIN usuario ON usuario.id_empresa = rh.id where usuario.id_login = '$id' ");
         $resultado2 = mysqli_fetch_array($sql2)?>
-        <h3>RH/Psicologo(a) selecionado onde será enviado o teste: <?php echo $resultado2['nome']; ?></h3>
+        <h2>Você já fez o teste para <?php echo $resultado2['nome']; ?></h2>
         <h3 id="opcao">Deseja alterar?<a class="botaoinicairteste" onclick="mostraRh()">SIM</a></h3>
     <center>
         <div style="display: none"  id="empresa_usuario" class="selectrh">
@@ -49,9 +49,8 @@
         </center>
         
          <br><br><br>
-         <form method="POST" action="funcoes/verificateste.php">
-             <center> <button class="botaoinicairteste" type="submit" >INICIAR TESTE</button></center>
-         </form>
+         
+
     <script>
     
     function mostraRh() {
@@ -65,3 +64,4 @@
     </script>
     </body>
 </html>
+
