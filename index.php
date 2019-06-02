@@ -27,6 +27,14 @@ include_once("funcoes/conexao.php");
             <a class="botao" onclick="mostraCadastro()">Cadastrar</a>
             <a class="botao" href="index.php">Home</a>
         </nav>
+        
+        <nav class="menumobile" id="menumobile">
+            
+            
+            
+            <a class="botaomobile2" onclick="mostraCadastro()">Cadastrar</a>
+            <a class="botaomobile1"  onclick="mostraLogin()">Login</a>
+        </nav>
 
 
         <div id="disc" class="scrollDisc">
@@ -102,7 +110,7 @@ include_once("funcoes/conexao.php");
         <!--      form login  -->
         <div id="login" style="display: none">
                 <h1>Login</h1>
-        <form class="login"   method="POST" action="funcoes/validalogin.php">
+                <center> <form class="login"   method="POST" action="funcoes/validalogin.php">
             
             <div class="links"><a href="index.php" style="text-decoration: none">Home</a><span> > </span><a>Login</a> </div> 
             <br><br>
@@ -116,10 +124,15 @@ include_once("funcoes/conexao.php");
                 <input type="password" name="senha" required id="senha">
             </div>
             <br>
-            <button class="botaoLogin" id="entrar" type="submit">Login</button>
-            <a style="font-size: 15px" >Esqueceu a senha?</a>
-
-        </form> 
+          <a style="font-size: 15px" >Esqueceu a senha?</a>
+          <a class="botaoLogin2" id="cancelar"  href="index.php">Cancelar</a>
+            <button class="botaoLogin2" id="cadastrar" type="submit">Entrar</button>
+            
+            
+ 
+        </form> </center>
+                
+                 
                 </div>
 
 
@@ -230,8 +243,8 @@ include_once("funcoes/conexao.php");
                 <input type="password" name="senha_usuario" required id="senha_usuario">
             </div>
             <br>
-            <a class="botaoLogin"  href="index.php">Cancelar</a>
-            <button class="botaoLogin"  type="submit">Cadastrar</button>
+            <a class="botaoLogin" id="cancelar"  href="index.php">Cancelar</a>
+            <button class="botaoLogin" id="cadastrar"  type="submit">Cadastrar</button>
              <br>   
 <br>
 <br>
@@ -274,8 +287,8 @@ include_once("funcoes/conexao.php");
                 <input type="password" name="senha_rh" required id="senha_rh">
             </div>
             <br>
-            <a class="botaoLogin"  href="index.php">Cancelar</a>
-            <button class="botaoLogin"  type="submit">Cadastrar</button>
+            <a class="botaoLogin" id="cancelar"  href="index.php">Cancelar</a>
+            <button class="botaoLogin" id="cadastrar"  type="submit">Cadastrar</button>
             <br>
             <br>
             <br>
@@ -303,6 +316,8 @@ include_once("funcoes/conexao.php");
             document.getElementById("disc").style.display = 'none';
             document.getElementById("usuario").style.display = 'none';
             document.getElementById("rh").style.display = 'none';
+            
+            document.getElementById("menumobile").style.display = 'none';
         }
 
 
@@ -358,6 +373,8 @@ include_once("funcoes/conexao.php");
             document.getElementById("disc").style.display = 'none';
             document.getElementById("usuario").style.display = 'none';
             document.getElementById("rh").style.display = 'none';
+            
+            document.getElementById("menumobile").style.display = 'none';
         }
 
         function mostraUsuario() {

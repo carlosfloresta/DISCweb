@@ -299,11 +299,10 @@ nav{
 .login{
   
     margin: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    position: relative;
+   
     
-    transform: translate(-50%, -50%);
+    
     font-family:courier,arial,helvetica;
     color: #fff;
     font-size: 30px;
@@ -323,6 +322,19 @@ nav{
 .botaoLogin {
         padding: 10px;
        float: right;
+   border: 1px solid #fff;
+   display: inline-block;
+   background-color: transparent;
+   font-family:courier,arial,helvetica;
+    color: #fff;
+    font-size: 20px;
+    text-decoration:none;
+cursor:pointer;
+}
+
+.botaoLogin2 {
+        padding: 10px;
+      
    border: 1px solid #fff;
    display: inline-block;
    background-color: transparent;
@@ -566,7 +578,7 @@ cursor:pointer;
     
 }
 
-@media screen and (max-width:900px)
+/*@media screen and (max-width:900px)
 {
     .modaldominancia{
        margin-top: -10% !important;
@@ -587,7 +599,7 @@ cursor:pointer;
         margin-top: -10% !important;
     }
       
-    }
+    }*/
 
 
 
@@ -645,3 +657,151 @@ cursor:pointer;
 }
 
 
+.menumobile{
+    
+    display: none;
+}
+
+@media screen and (max-width:700px)
+{
+   .menumobile
+    {
+        display: block;
+      
+      
+    }
+    
+     .botaomobile2 {
+         
+         
+          position:fixed; 
+       z-index: 9999; 
+       bottom:0%;  
+        
+       margin-top: -15%; 
+       left:0%; 
+       top:100%;  
+       width:50%; 
+       height:100%; 
+       background:#fff;
+       color:#282828;
+       text-align: center;
+   
+       padding-top: 10px;
+       
+  
+   font-weight: bold ;
+   
+   font-family:courier,arial,helvetica;
+   
+    font-size: 30px;
+    text-decoration:none;
+cursor:pointer;
+
+}
+
+
+.botaomobile1 {
+         
+         
+          position:fixed; 
+       z-index: 9999; 
+       bottom:0%;  
+        
+       margin-top: -15%; 
+       left:50%; 
+       top:100%;  
+       width:50%; 
+       height:100%; 
+       background:#fff;
+       color:#282828;
+       text-align: center;
+   
+       padding-top: 10px;
+       
+   border-left: 2px solid #282828;
+  
+   
+   font-family:courier,arial,helvetica;
+   
+    font-size: 30px;
+    text-decoration:none;
+cursor:pointer;
+
+ font-weight: bold ;
+
+}
+
+.menu{
+    
+    display: none;
+}
+
+.scrollDisc{
+    
+      margin-top: -15%; 
+}
+
+
+
+#cancelar {
+         
+         
+          position:fixed; 
+       z-index: 9999; 
+       bottom:0%;  
+        
+       margin-top: -15%; 
+       left:50%; 
+       top:100%;  
+       width:50%; 
+       height:100%; 
+       background:#fff;
+       color:#282828;
+       text-align: center;
+   
+       padding-top: 15px;
+       
+  
+   font-weight: bold ;
+   
+   font-family:courier,arial,helvetica;
+   
+    font-size: 30px;
+    text-decoration:none;
+cursor:pointer;
+border-left: 2px solid #282828;
+}
+
+
+#cadastrar {
+         
+          
+          position:fixed; 
+       z-index: 9999; 
+       bottom:0%;  
+        
+       margin-top: -15%; 
+       left:0%; 
+       top:100%;  
+       width:50%; 
+       height:70px;  
+       background:#fff;
+       color:#282828;
+       text-align: center;
+   
+       padding-top: 10px;
+       
+  
+   font-weight: bold ;
+   
+   font-family:courier,arial,helvetica;
+   
+    font-size: 30px;
+    text-decoration:none;
+cursor:pointer;
+
+}
+
+
+}

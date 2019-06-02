@@ -28,7 +28,7 @@
         $id = $_SESSION['usuarioId'];
         $sql2 = mysqli_query($conn, "SELECT rh.nome FROM rh INNER JOIN usuario ON usuario.id_empresa = rh.id where usuario.id_login = '$id' ");
         $resultado2 = mysqli_fetch_array($sql2)?>
-        <h3>RH/Psicologo(a) selecionado onde será enviado o teste: <?php echo $resultado2['nome']; ?></h3>
+        <h3>O TESTE será enviado para: <?php echo $resultado2['nome']; ?></h3>
         <h3 id="opcao">Deseja alterar?<a class="botaoinicairteste" onclick="mostraRh()">SIM</a></h3>
     <center>
         <div style="display: none"  id="empresa_usuario" class="selectrh">
