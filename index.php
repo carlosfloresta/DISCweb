@@ -116,7 +116,7 @@ include_once("funcoes/conexao.php");
                 <input type="password" name="senha" required id="senha">
             </div>
             <br>
-            <button class="botaoLogin" type="submit">Login</button>
+            <button class="botaoLogin" id="entrar" type="submit">Login</button>
             <a style="font-size: 15px" >Esqueceu a senha?</a>
 
         </form> 

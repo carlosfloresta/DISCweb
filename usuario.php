@@ -16,12 +16,12 @@
         <nav>
             
             <a class="botao" href="sair.php">Sair</a>
-            <a class="botao"><?php echo "Email: ". $_SESSION['usuarioEmail'];  ?></a>
+           
             
             
         </nav>    
         
-        <h1>DESCRIÇÃO DO TESTE</h1>
+        <h1>Bem-Vindo, <?php echo $login_session;  ?>.</h1>
         <h2>O TESTE DISC É COMPOSTO POR 28 QUADRANTES.<BR> ESCOLHA UMA OPÇÃO QUE MAIS SE PAREÇA COM VOCÊ E UMA QUE MENOS SE ADEQUE AO SEU PERFIL.</h2>
        
         <?php
@@ -50,7 +50,7 @@
         
          <br><br><br>
          <form method="POST" action="funcoes/verificateste.php">
-             <center> <button class="botaoinicairteste" type="submit" >INICIAR TESTE</button></center>
+             <center> <button type="submit" class="botaoinicairteste" id="iniciar">INICIAR TESTE</button></center>
          </form>
     <script>
     

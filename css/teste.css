@@ -42,7 +42,7 @@ input[type="radio"] {
   
     border: 4px solid #fff;
     width: 150px;
-  
+  height: 40px;
      display:flex;
         display: -webkit-flex;
         justify-content: center;
@@ -57,14 +57,14 @@ input[type="radio"] {
   
     border: 4px solid #fff;
     width: 150px;
-  
+  height: 40px;
      display:flex;
         display: -webkit-flex;
         justify-content: center;
         align-items: center;
         padding: 3px;
         position: relative;
-        margin-left: 10px
+        margin-left: 10px;
 }
 
 input[type="radio"]:checked+.label {
@@ -79,7 +79,7 @@ input[type="radio"]:checked+.label2 {
     
 }
 img {
-  height: 40px;
+  
   
 }
 
@@ -123,4 +123,70 @@ cursor:pointer;
 padding: 20px;
 
 
+}
+
+
+
+@media screen and (max-width:700px)
+{
+   #proximo
+    {
+        
+       position:fixed; 
+       z-index: 9999; 
+       bottom:0%;  
+        
+       margin-top: -15%; 
+       left:0%; 
+       top:100%;  
+       width:100%; 
+       height:100%; 
+       background:#fff;
+       color:#282828;
+       text-align: center;
+       font-size: 40px;
+      
+    }
+    
+    .questoes p{
+   
+     font-size: 28px;
+    
+     
+     
+}
+    
+    .label {
+  
+    border: 2px solid #fff;
+    width: 50px;
+  height: 40px;
+  
+    
+}
+
+
+.label2 {
+  
+    border: 2px solid #fff;
+    width: 50px;
+  height: 40px;
+  
+     
+}
+   
+ .sessao{
+    
+   
+       margin-top: -15%; 
+}
+h1{
+    
+     padding-bottom: 10%; 
+}
+    
+ 
+  
+
+  
 }

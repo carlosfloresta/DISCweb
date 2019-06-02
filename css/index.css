@@ -566,6 +566,29 @@ cursor:pointer;
     
 }
 
+@media screen and (max-width:900px)
+{
+    .modaldominancia{
+       margin-top: -10% !important;
+        
+    }
+    .modalestabilidade{
+       margin-top: -10% !important;
+        
+    }
+    
+    .modalinfluencia{
+        
+        margin-top: -10% !important;
+    }
+    
+    .modalcautela{
+        
+        margin-top: -10% !important;
+    }
+      
+    }
+
 
 
 .modalalert{
@@ -620,3 +643,5 @@ cursor:pointer;
 cursor:pointer;
     
 }
+
+
