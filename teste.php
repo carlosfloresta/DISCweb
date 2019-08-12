@@ -75,7 +75,7 @@ include('funcoes/session.php');
 
 
         </section>
-        <a class="botao" style="margin-right:100px;" id="proximo" onclick="proximapagina()">PRÓXIMO</a>
+        <a class="botao" style="margin-right:100px;" id="proximo" onclick="proximapagina();">PRÓXIMO</a>
 
 
         <form id="form" method="POST" action="funcoes/cadastrateste.php">
@@ -89,10 +89,18 @@ include('funcoes/session.php');
             <input value="" style="display: none" id="recebezmenos" name="recebezmenos">
             <input value="" style="display: none" id="recebemusicamenos" name="recebemusicamenos">
             <input value="" style="display: none" id="recebetriangulomenos" name="recebetriangulomenos">
-            <center>  <button class="botao2" type="submit" style=" display: none" id="finalizar">Enviar Teste</button></center> 
+            <center>  <button  class="botao2" type="submit" style=" display: none" id="finalizar">Enviar Teste</button></center> 
 
 
         </form>
+        
+        
+        
+        
+        
+
+
+        
 
         <script>
 
@@ -107,8 +115,16 @@ include('funcoes/session.php');
             var trimenos = 0;
             var musimenos = 0;
             var zmenos = 0;
+            
+            
 
             var clickButton = document.querySelector("#proximo");
+            
+             
+          
+
+                     
+                    
 
 
 
@@ -131,28 +147,16 @@ include('funcoes/session.php');
                 var nmenos = document.getElementById("nmenos");
                 var n2menos = document.getElementById("n2menos");
 
-
-
+               
+              if ((quadradomais.checked || triangulomais.checked || musicamais.checked || z2mais.checked || nmais.checked || n2mais.checked)&&(quadradomenos.checked || triangulomenos.checked || musicamenos.checked || z2menos.checked || nmenos.checked || n2menos.checked)) {     
                 count++;
+            }
+           
+                 
 
 
 
                 for (var i = 0; i <= count; i++) {
-
-
-
-                    if (quadradomais.checked || triangulomais.checked || musicamais.checked || z2mais.checked || nmais.checked || n2mais.checked) {
-
-                        document.getElementById("proximo").disabled = false;
-
-                    } else {
-                        document.getElementById("proximo").disabled = true;
-
-
-                    }
-
-
-
 
                     document.getElementsByTagName("h1")[0].innerHTML = i;
                     switch (i) {
@@ -1178,10 +1182,6 @@ include('funcoes/session.php');
 
 
                 }
-
-
-
-
 
             }
 

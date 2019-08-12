@@ -8,7 +8,7 @@
 
    $user_check = $_SESSION['usuarioEmail'];
    
-   $ses_sql = mysqli_query($conn,"select nome from usuario INNER JOIN login ON login.id = usuario.id_login where login.email = '$user_check' ");
+   $ses_sql = mysqli_query($conn,"select nome from rh INNER JOIN login ON login.id = rh.id_login where login.email = '$user_check' ");
    
    $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
    
@@ -19,4 +19,3 @@
    }
 
 ?>
-

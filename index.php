@@ -143,7 +143,7 @@ include_once("funcoes/conexao.php");
             
             <div class="modalalert" style="display: block;" id="modalalert" ><div class="content"><div class="scroll">
                     <center>
-                        <img src="img/alert.gif">
+                        <img src="img/alert.png">
                         <h2 style="color: #282828; font-family: arial;">Oops...</h2>
                         <h3 style="color: #282828; font-family: arial;">Email ou senha Incorretos</h3>
                         <a onclick="fecharAlert()">OK</a>
@@ -167,7 +167,7 @@ include_once("funcoes/conexao.php");
             ?>
             <div class="modalalert" style="display: block;" id="modalalert" ><div class="content">
                     <center>
-                        <img src="img/alert.gif">
+                        <img src="img/alert.png">
                         <h2 style="color: #282828; font-family: arial;">Saiu...</h2>
                         <h3 style="color: #282828; font-family: arial;">Deslogado com sucesso</h3>
                         <a onclick="fecharAlert()">OK</a>
@@ -206,22 +206,28 @@ include_once("funcoes/conexao.php");
 
     <div class="scroll" id="usuario" style="display: none">
         <h1>Usuário a ser Avaliado</h1>
+        
         <form class="usuario"  method="POST" action="funcoes/cadastrausuario.php">
             <div class="links"><a href="index.php" style="text-decoration: none">Home</a><span> > </span><a onclick="mostraCadastro()">Cadastrar</a> <span> > </span><a>Usuário a ser Avaliado</a> </div> 
-            <br><br>
+            <br>
+            <div id="alerta"></div>
+            <br>
+            
             <div>
                 <label>Nome:</label>
                 <input type="text" name="nome_usuario" required id="nome_usuario">
-
+                <input style="display: none" type="text" name="cpf_usuario" required id="cpf_usuario">
                 <label>CPF:</label>
-                <input type="number" name="cpf_usuario" required id="cpf_usuario">
+                <input type="text" name="cpf1" onkeypress="return mask(event, this, '###.###.###-##')" maxlength="14" required id="cpf1">
 
             </div>
             <br>
             <div>
+                 <input style="display: none" type="text" name="telefone_usuario" required id="telefone_usuario">
                 <label>Telefone:</label>
-                <input type="tel" name="telefone_usuario" required id="telefone_usuario">
-
+                <input type="text" name="telefone1"  maxlength="13" onkeypress="return mask(event, this, '## #####-####')"  required id="telefone1">
+                
+                
                 <label>Selecione a empresa:</label>
                 
                   
@@ -238,19 +244,38 @@ include_once("funcoes/conexao.php");
             <div>
                 <label>Email:</label>
                 <input type="email" name="email_usuario" required id="email_usuario">
-
+                <input style="display: none" type="password" name="senha_usuario" required id="senha_usuario">
                 <label>Senha:</label>
-                <input type="password" name="senha_usuario" required id="senha_usuario">
+                <input type="password"  required id="senha1"  maxlength="25">
+                <br><br>
+                <label>Confirme a senha:</label>
+                <input type="password" required id="senha2"  maxlength="25">
             </div>
             <br>
             <a class="botaoLogin" id="cancelar"  href="index.php">Cancelar</a>
-            <button class="botaoLogin" id="cadastrar"  type="submit">Cadastrar</button>
+            <button class="botaoLogin" id="cadastrar" onclick="confirmaSenha()" type="submit">Cadastrar</button>
              <br>   
 <br>
 <br>
         </form>
 
     </div> 
+    
+    
+    
+  
+
+
+           
+            
+
+          
+    
+            
+    
+    
+    
+    
 
 
     <!--    form usuario-->
@@ -261,19 +286,22 @@ include_once("funcoes/conexao.php");
         <h1>RH/Psicólogo(a)</h1>
         <form class="rh" method="POST" action="funcoes/cadastrarh.php">
             <div class="links"><a href="index.php" style="text-decoration: none">Home</a><span> > </span><a onclick="mostraCadastro()">Cadastrar</a> <span> > </span><a>RH/Psicologo(a)</a> </div> 
-            <br><br>
+            <br>
+             <div id="alerta_rh"></div>
+            <br>
             <div>
                 <label>Nome/Razão Social:</label>
                 <input type="text" name="nome_rh" required id="nome_rh">
-
+                 <input style="display: none" type="text" name="cnpj_rh" required id="cnpj_rh">
                 <label>CPF/CNPJ:</label>
-                <input type="number" name="cnpj_rh" required id="cnpj_rh">
+                <input type="text" name="cpf2" onkeypress="return mask(event, this,'##.###.###/####-##')" maxlength="18" required id="cpf2">
 
             </div>
             <br>
             <div>
+                <input style="display: none" type="text" name="telefone_rh" required id="telefone_rh">
                 <label>Telefone:</label>
-                <input type="tel" name="telefone_rh" required id="telefone_rh">
+                <input type="tel" name="telefone2" maxlength="13" onkeypress="return mask(event, this, '## #####-####')" required id="telefone2">
 
 
 
@@ -283,12 +311,19 @@ include_once("funcoes/conexao.php");
                 <label>Email:</label>
                 <input type="email" name="email_rh" required id="email_rh">
 
+               
+                <input type="password" style="display: none" name="senha_rh" required id="senha_rh">
+                
                 <label>Senha:</label>
-                <input type="password" name="senha_rh" required id="senha_rh">
+                <input type="password"  required id="senha3" maxlength="25" >
+                <br><br>
+                <label>Confirme a senha:</label>
+                <input type="password" required id="senha4" maxlength="25">
+                
             </div>
             <br>
             <a class="botaoLogin" id="cancelar"  href="index.php">Cancelar</a>
-            <button class="botaoLogin" id="cadastrar"  type="submit">Cadastrar</button>
+            <button class="botaoLogin" id="cadastrar" onclick="confirmaSenha2()"  type="submit">Cadastrar</button>
             <br>
             <br>
             <br>
@@ -378,14 +413,14 @@ include_once("funcoes/conexao.php");
         }
 
         function mostraUsuario() {
-
+            document.getElementById("disc").style.display = 'none';
             document.getElementById("usuario").style.display = 'block';
             document.getElementById("escolhaCadastro").style.display = 'none';
 
         }
 
         function mostraRh() {
-
+             document.getElementById("disc").style.display = 'none';
             document.getElementById("rh").style.display = 'block';
             document.getElementById("escolhaCadastro").style.display = 'none';
 
@@ -396,12 +431,269 @@ include_once("funcoes/conexao.php");
             document.getElementById("modalalert").style.display = 'none';
             mostraLogin();
         }
+        
+        
+        
+        
+        function confirmaSenha(){
+       var senha1 = document.getElementById("senha1").value;
+        var senha2 = document.getElementById("senha2").value;
+        
+         var celular = document.getElementById('telefone1').value;
+         var cpfusu = document.getElementById('cpf1').value;
+         var cel = celular.replace(/[^0-9]/g, '');
+         var cpf = cpfusu.replace(/[^0-9]/g, '');
+          if (cel.length === 11 || cel.length === 10) {
+              
+              document.getElementById("telefone_usuario").value = cel;
+              
+              
+          }else {
 
+                    document.getElementById("alerta").style.background = 'red';
+            document.getElementById("alerta").style.padding = '20px';
+             document.getElementById("alerta").innerHTML = "Por favor preencha o campo telefone com 11 ou 10 numeros!";
+            document.getElementById("usuario").scrollTo(0, 0);
+                }
+                
+                
+                 if (cpf.length === 11) {
+              
+              document.getElementById("cpf_usuario").value = cpf;
+              
+              
+          }else {
 
+                    document.getElementById("alerta").style.background = 'red';
+            document.getElementById("alerta").style.padding = '20px';
+             document.getElementById("alerta").innerHTML = "Por favor preencha o campo cpf com 11 numeros!";
+            document.getElementById("usuario").scrollTo(0, 0);
+                }
+        
+        if(senha1 === senha2){
+            
+           document.getElementById("senha_usuario").value = senha1;
+            
+        }else{
+            
+            document.getElementById("alerta").style.background = 'red';
+            document.getElementById("alerta").style.padding = '20px';
+             document.getElementById("alerta").innerHTML = "As senhas digitadas não se coincidem";
+            document.getElementById("usuario").scrollTo(0, 0);
+           
+        }
 
+        }
+        
+        
+        function confirmaSenha2(){
+       var senha3 = document.getElementById("senha3").value;
+        var senha4 = document.getElementById("senha4").value;
+        
+        var celular = document.getElementById('telefone2').value;
+         var cpfusu = document.getElementById('cpf2').value;
+         var cel = celular.replace(/[^0-9]/g, '');
+         var cpf = cpfusu.replace(/[^0-9]/g, '');
+          if (cel.length === 11 || cel.length === 10) {
+              
+              document.getElementById("telefone_rh").value = cel;
+              
+              
+          }else {
+
+                    document.getElementById("alerta_rh").style.background = 'red';
+            document.getElementById("alerta_rh").style.padding = '20px';
+             document.getElementById("alerta_rh").innerHTML = "Por favor preencha o campo telefone com 11 ou 10 numeros!";
+            document.getElementById("rh").scrollTo(0, 0);
+                }
+                
+                
+                 if (cpf.length === 11 || cpf.length === 14) {
+              
+              document.getElementById("cnpj_rh").value = cpf;
+              
+              
+          }else {
+
+                    document.getElementById("alerta_rh").style.background = 'red';
+            document.getElementById("alerta_rh").style.padding = '20px';
+             document.getElementById("alerta_rh").innerHTML = "Por favor preencha o campo cpf/cnpj com 11/14 numeros!";
+            document.getElementById("rh").scrollTo(0, 0);
+                }
+        
+        
+        if(senha3 === senha4){
+            
+           document.getElementById("senha_rh").value = senha3;
+            
+        }else{
+            
+           document.getElementById("alerta_rh").style.background = 'red';
+            document.getElementById("alerta_rh").style.padding = '20px';
+             document.getElementById("alerta_rh").innerHTML = "As senhas digitadas não se coincidem";
+             document.getElementById("rh").scrollTo(0, 0);
+        }
+
+        }
+        
+        
+        
+       function mask(e, id, mask) {
+            var tecla = (window.event) ? event.keyCode : e.which;
+            if ((tecla > 47 && tecla < 58)) {
+                mascara(id, mask);
+                return true;
+            } else {
+                if (tecla == 8 || tecla == 0) {
+                    mascara(id, mask);
+                    return true;
+                } else
+                    return false;
+            }
+        }
+        function mascara(id, mask) {
+            var i = id.value.length;
+            var carac = mask.substring(i, i + 1);
+            var prox_char = mask.substring(i + 1, i + 2);
+            if (i == 0 && carac != '#') {
+                insereCaracter(id, carac);
+                if (prox_char != '#')
+                    insereCaracter(id, prox_char);
+            } else if (carac != '#') {
+                insereCaracter(id, carac);
+                if (prox_char != '#')
+                    insereCaracter(id, prox_char);
+            }
+            function insereCaracter(id, char) {
+                id.value += char;
+            }
+        }
+ 
+       
+ 
+    
+        
 
 
     </script>
+    
+<!--    alerts cadastro usuario-->
+    
+    <?php
+        //alerts cadastro usuario.
+        if (isset($_SESSION['emailjaexiste'])) {
+
+        ?><script>
+        
+         document.getElementById("alerta").style.background = 'red';
+            document.getElementById("alerta").style.padding = '20px';
+             document.getElementById("alerta").innerHTML = "Você já tem cadastro com esse email em nosso sistema!";
+            document.getElementById("usuario").scrollTo(0, 0);
+            mostraUsuario();
+        </script><?php
+        
+         unset($_SESSION['emailjaexiste']);
+         
+         }
+        ?>
+        
+         <?php
+        //alerts cadastro usuario.
+        if (isset($_SESSION['emailoutrousu'])) {
+
+        ?><script>
+        
+         document.getElementById("alerta").style.background = 'red';
+            document.getElementById("alerta").style.padding = '20px';
+             document.getElementById("alerta").innerHTML = "Este email já está cadastrado em RH/Psicologo(a), escolha outro!";
+            document.getElementById("usuario").scrollTo(0, 0);
+            mostraUsuario();
+        </script><?php
+        
+         unset($_SESSION['emailoutrousu']);
+         
+         }
+        ?>
+        
+         <?php
+        //alerts cadastro usuario.
+        if (isset($_SESSION['cpfexiste'])) {
+
+        ?><script>
+        
+         document.getElementById("alerta").style.background = 'red';
+            document.getElementById("alerta").style.padding = '20px';
+             document.getElementById("alerta").innerHTML = "O CPF digitado já existe em nosso sistema!";
+            document.getElementById("usuario").scrollTo(0, 0);
+            mostraUsuario();
+        </script><?php
+        
+         unset($_SESSION['cpfexiste']);
+         
+         }
+        ?>
+        
+        
+        <!--    alerts cadastro rh-->
+    
+    <?php
+        //alerts cadastro usuario.
+        if (isset($_SESSION['emailjaexiste2'])) {
+
+        ?><script>
+        
+         document.getElementById("alerta_rh").style.background = 'red';
+            document.getElementById("alerta_rh").style.padding = '20px';
+             document.getElementById("alerta_rh").innerHTML = "Você já tem cadastro com esse email em nosso sistema!";
+            document.getElementById("rh").scrollTo(0, 0);
+            mostraRh();
+        </script><?php
+        
+         unset($_SESSION['emailjaexiste2']);
+         
+         }
+        ?>
+        
+         <?php
+        //alerts cadastro usuario.
+        if (isset($_SESSION['emailoutrousu2'])) {
+
+        ?><script>
+        
+         document.getElementById("alerta_rh").style.background = 'red';
+            document.getElementById("alerta_rh").style.padding = '20px';
+             document.getElementById("alerta_rh").innerHTML = "Este email já está cadastrado em usuario que será avaliado, escolha outro!";
+            document.getElementById("rh").scrollTo(0, 0);
+            mostraRh();
+        </script><?php
+        
+         unset($_SESSION['emailoutrousu2']);
+         
+         }
+        ?>
+        
+         <?php
+        //alerts cadastro usuario.
+        if (isset($_SESSION['cnpjexiste'])) {
+
+        ?><script>
+        
+         document.getElementById("alerta_rh").style.background = 'red';
+            document.getElementById("alerta_rh").style.padding = '20px';
+             document.getElementById("alerta_rh").innerHTML = "O CPF/CNPJ digitado já existe em nosso sistema!";
+            document.getElementById("rh").scrollTo(0, 0);
+            mostraRh();
+        </script><?php
+        
+         unset($_SESSION['cnpjexiste']);
+         
+         }
+        ?>
+    
+    
+    
+    
+    
 
     <script src='js/index.js' ></script>
 

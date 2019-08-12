@@ -1,4 +1,5 @@
 <?php
+
     session_start(); 
         //Incluindo a conexão com banco de dados   
     include_once("conexao.php");    
@@ -15,6 +16,7 @@
         
         //Encontrado um usuario na tabela usuário com os mesmos dados digitado no formulário
         if(isset($resultado)){
+            
             $_SESSION['usuarioId'] = $resultado['id'];
 //            $_SESSION['usuarioNome'] = $resultado['nome'];
             $_SESSION['usuarioNiveisAcessoId'] = $resultado['nivel'];

@@ -1,5 +1,47 @@
-body{  
-    background-color: #282828;
-  
-  
+
+
+h1{
+    
+    text-align: center;
+    color:#000;
+    font-family:Calibri;
+    font-size: 50px;
 }
+
+h2{
+    text-align: center;
+    color:#000;
+    font-family:Calibri;
+}
+
+nav{
+    position: static;
+    margin: 10px;
+   padding-left: -100px;
+    width: 95%;
+    height: 50px; 
+    z-index: 1;
+   
+}
+.botao {
+        padding: 10px;
+       
+   border: 1px solid #000;
+   
+   
+   font-family:courier,arial,helvetica;
+    color: #000;
+    font-size: 20px;
+    text-decoration:none;
+cursor:pointer;
+float:right;
+}
+
+.tabela{
+    
+    margin-left: 5%;
+    margin-right: 5%;
+    
+}
+
+
