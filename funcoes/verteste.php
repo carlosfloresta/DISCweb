@@ -48,17 +48,17 @@ switch ($acao) {
            
            
 //               segundo maior
-              if(($d<$i && $d>$s && $d>$c)||($d>$i && $d<$s && $d>$c) || ($d>$i && $d>$s && $d<$c)){
+              if(($d<=$i && $d>=$s && $d>=$c)||($d>=$i && $d<=$s && $d>=$c) || ($d>=$i && $d>=$s && $d<=$c)){
                
               $mensagem2= 'Dominante <br> São pessoas que possuem mais facilidade em lidar com desafios, pois são determinadas, exigentes, ousadas e assertivas. Por outro lado, essas pessoas não são muito atenciosas com os sentimentos e necessidades dos outros, podendo se tornar egoístas.';
               $corfundo2 = '#F32D2D';
                
-           }else if(($i<$s && $i>$d && $i>$c) || ($i>$s && $i<$d && $i>$c) || ($i>$s && $i>$d && $i<$c)){
+           }else if(($i<=$s && $i>=$d && $i>=$c) || ($i>=$s && $i<=$d && $i>=$c) || ($i>=$s && $i>=$d && $i<=$c)){
                
              $mensagem2 ='Influente <br> São pessoas mais emocionais e que possuem grande habilidade em influenciar pessoas. São animadas, entusiasmadas, extrovertidas e motivadoras. Sabem persuadir, se comunicar e manter o otimismo. Entretanto, essas pessoas constantemente iniciam projetos e não os terminam, e seu entusiasmo pode parecer superficialidade para os outros.';
              $corfundo2 = '#49A55E';
                
-           }else if(($s<$i && $s>$d && $s>$c) || ($s>$i && $s<$d && $s>$c) || ($s>$i && $s>$d && $s<$c)){
+           }else if(($s<=$i && $s>=$d && $s>=$c) || ($s>=$i && $s<=$d && $s>=$c) || ($s>=$i && $s>=$d && $s<=$c)){
                
               $mensagem2 ='Estável <br> São pessoas que lidam melhor com rotinas e padrões. São paciêncientes, tranquilas, confiáveis, leais, persistentes e gentis. Por outro lado, a estabilidade muitas vezes é acompanhada pelo medo das mudanças e uma grande falta de iniciativa. Pessoas com essa tendência de comportamento possuem dificuldade em lidar com conflitos.';
                $corfundo2 = '#667FCE';
@@ -123,7 +123,7 @@ switch ($acao) {
              <br>
              <br>
              
-             <img style="width:100%" src="funcoes/grafico.php">
+             <img style="width:100%" src="funcoes/grafico.php?d=<?php echo $d ?>&i=<?php echo $i ?>&s=<?php echo $s ?>&c=<?php echo $c ?>">
              
              
 
@@ -213,11 +213,15 @@ $telefone_usuario = $resultado['telefone'];
                  <input hidden="none" type="text" name="emailusuario" required id="emailusuario" value="<?php echo $email_usuario ?>">
                   <input hidden="none" type="text" name="cor1" required id="cor1" value="<?php echo $corfundo ?>">
                   <input hidden="none" type="text" name="cor2" required id="cor2" value="<?php echo $corfundo2 ?>">
+                  <input hidden="none" type="text" name="d" required id="d" value="<?php echo $d ?>">
+                  <input hidden="none" type="text" name="i" required id="i" value="<?php echo $i ?>">
+                  <input hidden="none" type="text" name="s" required id="s" value="<?php echo $s ?>">
+                  <input hidden="none" type="text" name="c" required id="c" value="<?php echo $c ?>">
                 
                 <button style="color: #000;"   id="cadastrar" type="submit">Enviar Teste</button>
 
             </div>
-    
+            
     
     
 </form>

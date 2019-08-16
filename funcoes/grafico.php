@@ -1,12 +1,12 @@
 <?php
-session_start();
+
 include_once ('phplot/phplot.php');
 
-
-               $d =  $_SESSION['d'];
-               $i=  $_SESSION['i'];
-                $s =  $_SESSION['s'];
-               $c =  $_SESSION['c'];
+                    
+               $d = $_GET['d'];
+               $i=  $_GET['i'];
+                $s =  $_GET['s'];
+               $c =  $_GET['c'];
 
 
 //           grafico

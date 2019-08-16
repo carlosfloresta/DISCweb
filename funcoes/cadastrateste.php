@@ -20,6 +20,12 @@ $i = $quadrado_mais - $quadrado_menos;
 $s = $triangulo_mais - $triangulo_menos;
 $c = $musica_mais - $musica_menos;
 
+              
+
+
+
+
+
 // maior
                  if($d>$i && $d>$s && $d>$c ){    
 
@@ -89,7 +95,7 @@ if ($resultado2) {
 
         $email_empresa = $resultado3['email'];
 
-        email($maior,$email_empresa,$telefone_usuario,$nome_usuario,$email_usuario,$maior2,$corfundo,$corfundo2);
+        email($maior,$email_empresa,$telefone_usuario,$nome_usuario,$email_usuario,$maior2,$corfundo,$corfundo2,$d,$i,$s,$c);
 
         echo"<script language='javascript' type='text/javascript'>window.location.href='../usuario.php'</script>";
     } else {
