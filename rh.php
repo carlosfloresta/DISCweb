@@ -82,7 +82,7 @@
 
                   <a href="#" data-id="<?php echo $resultado['id']; ?>"  id="btn_ver">Ver Teste</a>
                   <span> | </span>
-                  <a href="#">Enviar Teste para Email</a>
+                  <a href="#"  data-id="<?php echo $resultado['id']; ?>" id="btn_email">Enviar Teste para Email</a>
 
 
               </td>
@@ -149,6 +149,42 @@
             conteudo.html(retorno);
 
 
+
+        });
+
+        return false;
+
+    });
+    
+    });
+    
+    
+    
+    $(document).ready(function () {
+    
+    var conteudo = $('.modal-body');
+    
+   
+   //btn ver
+   
+    $('.table').on("click", '#btn_email', function () {
+        var id = $(this).attr('data-id');
+        
+        
+          
+        $.post('funcoes/verteste.php', {acao: 'form_email', id: id}, function (retorno) {
+
+            $('#myModal').modal({
+                
+              
+
+                backdrop: 'static'
+            });
+
+             document.getElementById('myModalLabel').innerHTML= 'Enviar Teste';
+            conteudo.html(retorno);
+
+          
 
         });
 

@@ -1,46 +1,21 @@
 <?php
 
 
-function email($maior,$email,$telefone,$nome,$emailCandidato){
+function email($maior,$email,$telefone,$nome,$emailCandidato,$segundoMaior,$corfundo,$corfundo2){
     
   
   // Compo E-mail
   $arquivo = "
-  <style type='text/css'>
-  body {
-  margin:0px;
-  font-family:Verdane;
-  font-size:12px;
-  color: #666666;
-  }
-  a{
-  color: #666666;
-  text-decoration: none;
-  }
-  a:hover {
-  color: #FF0000;
-  text-decoration: none;
-  }
-  
-   
-                 
-                 .estilo2{
-                     
-                     background-color: #F32D2D;
-                     font-size: 20px;
-                     color: #fff;
-                     padding: 10px;
-                 }
-  </style>
+ 
     <html>
     
-          <h2>$nome</h2>
-              <h4>$emailCandidato</h4>
-              <h4>$telefone</h4>
+          <h2>Nome: $nome</h2>
+              <h4>Email: $emailCandidato</h4>
+              <h4>Telefone: $telefone</h4>
              
              <h3>Este candidato é mais...</h3>
              
-             <div style='background-color: #49A55E;  font-size: 20px; color: #fff; padding: 10px;'>
+             <div style='background-color: $corfundo;  font-size: 20px; color: #fff; padding: 10px;'>
              
       
             <p>$maior</p><br>
@@ -48,6 +23,16 @@ function email($maior,$email,$telefone,$nome,$emailCandidato){
           
             
              </div>
+             
+                <h3>Com ascendente em...</h3>
+            <div style='background-color: $corfundo2;  font-size: 20px; color: #fff; padding: 10px;'>
+             
+      
+            <p>$segundoMaior</p><br>
+            
+          
+            
+             </div>        
        
     </html>
   ";
@@ -63,18 +48,26 @@ function email($maior,$email,$telefone,$nome,$emailCandidato){
  
   // É necessário indicar que o formato do e-mail é html
   $headers  = 'MIME-Version: 1.0' . "\r\n";
-      $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+      $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
       $headers .= 'From:'.$nome.'<'.$emailCandidato.'>';
   //$headers .= "Bcc: $EmailPadrao\r\n";
    
   $enviaremail = mail($destino, $assunto, $arquivo, $headers);
   if($enviaremail){
-  $mgm = "E-MAIL ENVIADO COM SUCESSO! <br> O link será enviado para o e-mail fornecido no formulário";
-  echo " <meta http-equiv='refresh' content='10;URL=contato.php'>";
+      
+      
+             echo"<script language='javascript' type='text/javascript'>alert('Teste enviado, obrigado!');</script>";
+ 
+  
+//  $mgm = "E-MAIL ENVIADO COM SUCESSO! <br> O link será enviado para o e-mail fornecido no formulário";
+//  echo " <meta http-equiv='refresh' content='10;URL=contato.php'>";
   } else {
-  $mgm = "ERRO AO ENVIAR E-MAIL!";
-  echo "";
-  }  
+      
+       echo"<script language='javascript' type='text/javascript'>alert('Erro ao enviar email, tente novamente!');</script>";
+  }
+//  $mgm = "ERRO AO ENVIAR E-MAIL!";
+//  echo "";
+//  }  
     
     
     
