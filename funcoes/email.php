@@ -1,13 +1,10 @@
 <?php
-//session_start();
+
 
             
 
 function email($maior,$email,$telefone,$nome,$emailCandidato,$segundoMaior,$corfundo,$corfundo2,$d,$i,$s,$c){
-//    $d =  $_SESSION['d'];
-//               $i =    $_SESSION['i'];
-//                $s =   $_SESSION['s'];
-//                $c =   $_SESSION['c'];
+
   
   // Compo E-mail
   $arquivo = "
@@ -39,7 +36,7 @@ function email($maior,$email,$telefone,$nome,$emailCandidato,$segundoMaior,$corf
             
              </div>    
              
-               <img style='width:100%' src='https://carlos.cf/DISCweb/funcoes/grafico.php?d=$d&i=$i&s=$s&c=$c'>
+               <img style='width:100%' src='https://disc.cf/funcoes/grafico.php?d=$d&i=$i&s=$s&c=$c'>
        
     </html>
   ";

@@ -3,10 +3,10 @@
 include_once ('phplot/phplot.php');
 
                     
-               $d = $_GET['d'];
-               $i=  $_GET['i'];
-                $s =  $_GET['s'];
-               $c =  $_GET['c'];
+               $d = filter_input(INPUT_GET, 'd', FILTER_SANITIZE_STRING);
+               $i=  filter_input(INPUT_GET, 'i', FILTER_SANITIZE_STRING);
+                $s =  filter_input(INPUT_GET, 's', FILTER_SANITIZE_STRING);
+               $c =  filter_input(INPUT_GET, 'c', FILTER_SANITIZE_STRING);
 
 
 //           grafico

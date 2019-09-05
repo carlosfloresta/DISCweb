@@ -47,17 +47,17 @@ $c = $musica_mais - $musica_menos;
            
            
 //               segundo maior
-              if(($d<$i && $d>$s && $d>$c)||($d>$i && $d<$s && $d>$c) || ($d>$i && $d>$s && $d<$c)){
+              if(($d<=$i && $d>=$s && $d>=$c)||($d>=$i && $d<=$s && $d>=$c) || ($d>=$i && $d>=$s && $d<=$c)){
                
               $maior2= 'Dominante <br> São pessoas que possuem mais facilidade em lidar com desafios, pois são determinadas, exigentes, ousadas e assertivas. Por outro lado, essas pessoas não são muito atenciosas com os sentimentos e necessidades dos outros, podendo se tornar egoístas.';
               $corfundo2 = '#F32D2D';
                
-           }else if(($i<$s && $i>$d && $i>$c) || ($i>$s && $i<$d && $i>$c) || ($i>$s && $i>$d && $i<$c)){
+           }else if(($i<=$s && $i>=$d && $i>=$c) || ($i>=$s && $i<=$d && $i>=$c) || ($i>=$s && $i>=$d && $i<=$c)){
                
              $maior2 ='Influente <br> São pessoas mais emocionais e que possuem grande habilidade em influenciar pessoas. São animadas, entusiasmadas, extrovertidas e motivadoras. Sabem persuadir, se comunicar e manter o otimismo. Entretanto, essas pessoas constantemente iniciam projetos e não os terminam, e seu entusiasmo pode parecer superficialidade para os outros.';
              $corfundo2 = '#49A55E';
                
-           }else if(($s<$i && $s>$d && $s>$c) || ($s>$i && $s<$d && $s>$c) || ($s>$i && $s>$d && $s<$c)){
+           }else if(($s<=$i && $s>=$d && $s>=$c) || ($s>=$i && $s<=$d && $s>=$c) || ($s>=$i && $s>=$d && $s<=$c)){
                
               $maior2='Estável <br> São pessoas que lidam melhor com rotinas e padrões. São paciêncientes, tranquilas, confiáveis, leais, persistentes e gentis. Por outro lado, a estabilidade muitas vezes é acompanhada pelo medo das mudanças e uma grande falta de iniciativa. Pessoas com essa tendência de comportamento possuem dificuldade em lidar com conflitos.';
                $corfundo2 = '#667FCE';
@@ -82,6 +82,16 @@ $telefone_usuario = $resultado2['telefone'];
 
 
 if ($resultado2) {
+    
+    $pegaEmail = mysqli_query($conn, "SELECT * FROM teste WHERE id_usuario = '$id_usuario' AND id_empresa = '$id_empresa'");
+$resultado4 = mysqli_fetch_assoc($pegaEmail);
+
+if (isset($resultado4)) {
+          
+
+               echo"<script language='javascript' type='text/javascript'>alert('Erro! Você já enviou o teste para essa empresa');window.location.href='../usuario.php'</script>";
+
+    } else {
 
 
     $result_teste = "INSERT INTO teste(d, i, s, c, id_usuario, id_empresa) values('$d', '$i', '$s', '$c','$id_usuario','$id_empresa')";
@@ -101,6 +111,8 @@ if ($resultado2) {
     } else {
 
         echo"<script language='javascript' type='text/javascript'>alert('Não foi possivel o envio do teste, tente fazer novamente mais tarde!');window.location.href='../usuario.php'</script>";
+    }
+    
     }
 } else {
 

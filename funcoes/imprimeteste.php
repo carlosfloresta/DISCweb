@@ -1,12 +1,12 @@
 <?php
 session_start();
 include_once("conexao.php");
-include_once ('email.php');
 
+$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
-$id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
 $id_login = $_SESSION['usuarioId'];
-                $sql3 = mysqli_query($conn, "SELECT usuario.*, teste.* FROM usuario INNER JOIN teste ON usuario.id = teste.id_usuario INNER JOIN rh ON teste.id_empresa = rh.id where usuario.id = '$id' and rh.id_login = '$id_login' ORDER BY usuario.id DESC  ");
+
+$sql3 = mysqli_query($conn, "SELECT usuario.*, teste.* FROM usuario INNER JOIN teste ON usuario.id = teste.id_usuario INNER JOIN rh ON teste.id_empresa = rh.id where usuario.id = '$id' and rh.id_login = '$id_login' ORDER BY usuario.id DESC  ");
                  $resultado = mysqli_fetch_assoc($sql3);
                 
                
@@ -54,31 +54,33 @@ $id_login = $_SESSION['usuarioId'];
            }else{    
                            $mensagem2 ='Cauteloso<br>São pessoas que possuem uma maior facilidade em lidar com regras e processos. São metódicas, analíticas, técnicas e determinadas. Elas seguem ordens e normas, e realizam suas tarefas com um cuidado exemplar. Por serem muito perfeccionistas, tendem a se perder em detalhes e são extremamente críticas — tanto com elas mesmas, quanto com as outras pessoas.';
                            $corfundo2 = '#F9BF3B';
-           }                 
-                 
-                 
-                 
-                 
-                 
+           }
 
 
 
-$acao = filter_input(INPUT_POST, 'acao', FILTER_SANITIZE_STRING);
 
-switch ($acao) {
-   
-    case 'form_ver':
+?>
 
-        ?>
-        
-         <form action="" name="form_ver" method="post">
-             
-             <style>
+<html>
+    
+    <head>
+        <style>
+            
+            h2{
+                
+                font-size: 15px;
+                
+            }
+                 body{
+                     -webkit-print-color-adjust: exact;
+                    font-family: arial;
+                     
+                 }
                  
                  .estilo{
                      
                      background-color: <?php echo $corfundo ?>;
-                     font-size: 20px;
+                     font-size: 14px;
                      color: #fff;
                      padding: 10px;
                  }
@@ -86,14 +88,35 @@ switch ($acao) {
                  .estilo2{
                      
                      background-color: <?php echo $corfundo2 ?>;
-                     font-size: 20px;
+                     font-size: 14px;
                      color: #fff;
                      padding: 10px;
                  }
                  
+                 @media print {
+   
+}
+                 
              </style>
+        
+    </head>
+    
+    
+    <body onload="Javascript:window.print();">
+        
+        
+        
+    
+
+
+
+<div>
+             
+             
             
-             <h2><?php echo $resultado['nome'] ?></h2>
+             <h2>Nome:<?php echo $resultado['nome'] ?></h2>
+             <h2>Email:<?php echo $resultado['email'] ?></h2>
+             <h2>Telefone/celular:<?php echo $resultado['telefone'] ?></h2>
              
              <h3>Este candidato é mais...</h3>
              
@@ -118,96 +141,17 @@ switch ($acao) {
              <br>
              <br>
              
-             <img style="width:100%" src="funcoes/grafico.php?d=<?php echo $d ?>&i=<?php echo $i ?>&s=<?php echo $s ?>&c=<?php echo $c ?>">
+             <img style="width:50%" src="grafico.php?d=<?php echo $d ?>&i=<?php echo $i ?>&s=<?php echo $s ?>&c=<?php echo $c ?>">
              
              
 
-        </form>
-        
-        <?php
-        
-        break;   
-        
-        
-        case 'form_email':
- 
-$email_usuario = $resultado['email'];
-$nome_usuario = $resultado['nome'];
-$telefone_usuario = $resultado['telefone'];
-                 
-  
-                 ?>
+        </div>
 
-<form action="funcoes/enviaemailrh.php" name="form_email" method="post">
-    <h2>Candidato: <?php echo $resultado['nome'] ?></h2>
-    <br>
-    
-   <div>
-                <label>Email:</label>
-                <input type="email" name="email" required id="email">
-                
-                
-                <input hidden="none" type="text" name="nome" required id="nome" value="<?php echo $nome_usuario ?>">
-                <input hidden="none" type="text" name="mensagem" required id="mensagem" value="<?php echo $mensagem ?>">
-                <input hidden="none" type="text" name="telefone" required id="telefone" value="<?php echo $telefone_usuario ?>">
-                <input hidden="none" type="text" name="mensagem2" required id="mensagem2" value="<?php echo $mensagem2 ?>">
-                 <input hidden="none" type="text" name="emailusuario" required id="emailusuario" value="<?php echo $email_usuario ?>">
-                  <input hidden="none" type="text" name="cor1" required id="cor1" value="<?php echo $corfundo ?>">
-                  <input hidden="none" type="text" name="cor2" required id="cor2" value="<?php echo $corfundo2 ?>">
-                  <input hidden="none" type="text" name="d" required id="d" value="<?php echo $d ?>">
-                  <input hidden="none" type="text" name="i" required id="i" value="<?php echo $i ?>">
-                  <input hidden="none" type="text" name="s" required id="s" value="<?php echo $s ?>">
-                  <input hidden="none" type="text" name="c" required id="c" value="<?php echo $c ?>">
-                
-                <button style="color: #000;"   id="cadastrar" type="submit">Enviar Teste</button>
-
-            </div>
-            
-    
-    
-</form>
+</body>
+</html>
 
 
-<?php
-            
-            break;
-        
-        
-        case 'form_excluir':
- 
-            ?>
-
-<div>
-    
-    <style>
-        
-        .botoesexcluir{
-             padding: 10px;
-           border: 1px solid #000;
-           text-decoration:none;
-           color:#fff;
-           font-size: 20px;
-            
-        }
-        
-        
-    </style>
-    <h2>Candidato: <?php echo $resultado['nome'] ?></h2><br><br>
-    
-    <center> <a class="botoesexcluir" style="background-color: #49A55E" href="funcoes/excluirteste.php?id=<?php echo $id ?>">Excluir</a>
-    <a class="botoesexcluir" style="background-color: #F32D2D" href="">Cancelar</a> </center>
-    
-    
-    
-    
-</div>
 
 
-           
-        <?php
-            
-            break;
-                
-}    
 
- mysqli_close($conn);
+

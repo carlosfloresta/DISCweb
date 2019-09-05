@@ -80,10 +80,14 @@
               <td>
 
 
-                  <a href="#" data-id="<?php echo $resultado['id']; ?>"  id="btn_ver">Ver Teste</a>
+                  <a href="#" data-id="<?php echo $resultado['id']; ?>"  id="btn_ver">Ver</a>
                   <span> | </span>
-                  <a href="#"  data-id="<?php echo $resultado['id']; ?>" id="btn_email">Enviar Teste para Email</a>
-
+                  <a href="#"  data-id="<?php echo $resultado['id']; ?>" id="btn_email">Enviar</a>
+                  <span> | </span>
+                  <a href="funcoes/imprimeteste.php?id=<?php echo $resultado['id']; ?>"  id="btn_imprimir" target="_blank">Imprimir</a>
+                  
+                  <span> | </span>
+                  <a href="#"  data-id="<?php echo $resultado['id']; ?>" id="btn_excluir">Excluir</a>
 
               </td>
           </tr>
@@ -145,7 +149,7 @@
                 backdrop: 'static'
             });
 
-
+             document.getElementById('myModalLabel').innerHTML= 'Ver Teste';
             conteudo.html(retorno);
 
 
@@ -165,7 +169,7 @@
     var conteudo = $('.modal-body');
     
    
-   //btn ver
+   //btn email
    
     $('.table').on("click", '#btn_email', function () {
         var id = $(this).attr('data-id');
@@ -182,6 +186,40 @@
             });
 
              document.getElementById('myModalLabel').innerHTML= 'Enviar Teste';
+            conteudo.html(retorno);
+
+          
+
+        });
+
+        return false;
+
+    });
+    
+    });
+    
+     $(document).ready(function () {
+    
+    var conteudo = $('.modal-body');
+    
+   
+   //btn excluir
+   
+    $('.table').on("click", '#btn_excluir', function () {
+        var id = $(this).attr('data-id');
+        
+        
+          
+        $.post('funcoes/verteste.php', {acao: 'form_excluir', id: id}, function (retorno) {
+
+            $('#myModal').modal({
+                
+              
+
+                backdrop: 'static'
+            });
+
+             document.getElementById('myModalLabel').innerHTML= 'Deseja Realmente Excluir este Teste?';
             conteudo.html(retorno);
 
           

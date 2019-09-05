@@ -25,7 +25,10 @@ include_once("funcoes/conexao.php");
             
             <a class="botao"  onclick="mostraLogin()">Login</a>
             <a class="botao" onclick="mostraCadastro()">Cadastrar</a>
+          
             <a class="botao" href="index.php">Home</a>
+            
+              <a class="botao" onclick="mostraCadastro()">Conheça nosso Sistema</a>
         </nav>
         
         <nav class="menumobile" id="menumobile">
