@@ -7,6 +7,7 @@
     $cnpj_usuario = mysqli_real_escape_string($conn,$_POST['cnpj_rh']);
     $senha_usuario = mysqli_real_escape_string($conn, $_POST['senha_rh']);
     $telefone_usuario = mysqli_real_escape_string($conn,$_POST['telefone_rh']);
+    $codigo_rh = mysqli_real_escape_string($conn,$_POST['codigo_rh']);
    $senha_usuario = md5($senha_usuario);
    
    $pegaEmail = mysqli_query($conn, "SELECT * FROM login WHERE email = '$email_usuario'");
@@ -36,6 +37,15 @@ if (isset($resultado2)) {
         $_SESSION['cnpjexiste'] = "";
         header("Location: ../index.php");
     } else {
+        
+        $codigo = mysqli_query($conn, "SELECT * FROM rh WHERE codigo_acesso = '$codigo_rh'");
+    $resultado4 = mysqli_fetch_assoc($codigo);
+    
+    if (isset($resultado4)) {
+
+        $_SESSION['codigoexiste'] = "";
+        header("Location: ../index.php");
+    } else {
     
     
     $result_login = "INSERT INTO login(email, senha, nivel) values('$email_usuario', '$senha_usuario', '2')";
@@ -45,7 +55,7 @@ if (isset($resultado2)) {
   
   $id = mysqli_affected_rows($conn) > 0 ? mysqli_insert_id($conn) : 0;
     
-    $result_usuario = "INSERT INTO rh (nome, telefone, cnpj,  email, senha, nivel, id_login) VALUES ('$nome_usuario','$telefone_usuario','$cnpj_usuario','$email_usuario','$senha_usuario','2','$id')";
+    $result_usuario = "INSERT INTO rh (nome, telefone, cnpj,  email, senha, nivel, id_login, codigo_acesso) VALUES ('$nome_usuario','$telefone_usuario','$cnpj_usuario','$email_usuario','$senha_usuario','2','$id','$codigo_rh')";
     $resultado_usuario = mysqli_query($conn, $result_usuario);
     
     if(mysqli_affected_rows($conn) != 0){
@@ -63,7 +73,7 @@ if (isset($resultado2)) {
 		echo "<br/><a href='../login2.php' class='btn btn-primary'>Fazer Login</a>";    
                 
             }
-            
+    }
     }
             
 }

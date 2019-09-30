@@ -1,5 +1,5 @@
 body{  
-    background-color: #282828;
+    background-color: #1E2935;
    overflow: hidden;
   
 }
@@ -237,36 +237,130 @@ transition: 0.4s ease-in;
          
          
  text-align: center;
-    font-family:courier,arial,helvetica;
+    font-family:Arial;
     color: #fff;
         
     }
     
     .botao {
         padding: 10px;
-       
-   border: 1px solid #fff;
-   
-   
-   font-family:courier,arial,helvetica;
+/*  background-color: #fff;*/
+   margin: 0 2px;
+    font-weight:bold;
+   font-family:Arial;
     color: #fff;
-    font-size: 20px;
+    font-size: 17px;
+    text-decoration:none;
+cursor:pointer;
+float:right;
+
+border-right: 1px solid #fff;
+}
+
+
+  .botaoDuvida {
+        padding: 10px;
+  background-color:transparent;
+   margin: 0 10px;
+   
+   font-family:Arial;
+    font-weight: bold;
+    color: #fff;
+    font-size: 17px;
+    text-decoration:none;
+cursor:pointer;
+float:right;
+border-radius: 100%;
+
+  width: 15px;
+    height: 15px; 
+
+
+   
+    
+    border-right: 1px solid #667FCE; 
+  border-top: 1px solid #49A55E; 
+  border-left: 1px solid #F32D2D; 
+  border-bottom: 1px solid #F9BF3B;
+
+
+}
+
+.botaoDuvida:hover{
+    
+    
+     border-right: 3px solid #667FCE; 
+  border-top: 3px solid #49A55E; 
+  border-left: 3px solid #F32D2D; 
+  border-bottom: 3px solid #F9BF3B;
+  border-top-left-radius: 500px; 
+  border-top-right-radius: 500px; 
+  border-bottom-left-radius: 500px; 
+  border-bottom-right-radius: 500px;
+  
+  
+  -webkit-transition: 0.4s ease-in;
+-moz-transition: 0.4s ease-in;
+-o-transition: 0.4s ease-in;
+transition: 0.4s ease-in;
+
+
+ transform: rotate(360deg);
+    
+    
+}
+
+ .botaoRedesSociais {
+        padding: 10px 10px;
+  background-color: #667FCE;
+   margin: 0 2px;
+   font-weight:bold;
+   font-family:Arial;
+    color: #fff;
+    font-size: 17px;
     text-decoration:none;
 cursor:pointer;
 float:right;
 }
 
-
-
-nav{
-    position: static;
-    margin: 10px;
-   padding-left: -100px;
-    width: 95%;
-    height: 50px; 
-    z-index: 1;
-   
+.botaoRedesSociais:after {
+	content: '' !important;
+	display: block !important;
+	margin: auto !important;
+	height: 3px !important;
+	width: 0px !important;
+	background: transparent;
+	transition: width .5s ease, background-color .2s ease !important;
+         border-right: 1px solid #667FCE; 
+ 
 }
+.botaoRedesSociais:hover:after {
+	width: 100% !important;
+	background: #fff !important;
+        
+}
+
+.botao:after {
+	content: '' !important;
+	display: block !important;
+	margin: auto !important;
+	height: 2px !important;
+	width: 0px !important;
+	background: transparent;
+	transition: width .5s ease, background-color .2s ease !important;
+        
+ 
+}
+.botao:hover:after {
+	width: 100% !important;
+	background: #fff !important;
+        
+}
+
+
+
+
+
 
 .escolhacadastro{
     
@@ -298,16 +392,23 @@ nav{
 
 .login{
   
-    margin: 10px;
+   
     position: relative;
    
-    
+   
     
     font-family:courier,arial,helvetica;
     color: #fff;
     font-size: 30px;
     
     
+}
+
+.login .border{
+    padding: 10px;
+    width: 400px;
+    
+    border: 2px solid #fff; 
 }
 
 .login input{
@@ -317,11 +418,15 @@ nav{
     width: 350px; 
   height: 40px;
   font-size: 20px;
+   border: 1px solid #fff; 
 }
 
-.botaoLogin {
+.cadastrar{
+    text-align: center;
+    width: 300px;
+    height: 50px;
         padding: 10px;
-       float: right;
+    
    border: 1px solid #fff;
    display: inline-block;
    background-color: transparent;
@@ -330,15 +435,48 @@ nav{
     font-size: 20px;
     text-decoration:none;
 cursor:pointer;
+}
+
+.cancelar{
+     text-align: center;
+    width: 300px;
+    
+        padding: 10px;
+    
+   border: 1px solid #fff;
+   display: inline-block;
+   background-color: transparent;
+   font-family:courier,arial,helvetica;
+    color: #fff;
+    font-size: 20px;
+    text-decoration:none;
+cursor:pointer;
+     height: 26px;
+    
 }
 
 .botaoLogin2 {
         padding: 10px;
-      
-   border: 1px solid #fff;
+       height:60px !important; 
+   width: 235px; 
+   border:none!important;
    display: inline-block;
-   background-color: transparent;
-   font-family:courier,arial,helvetica;
+   background-color: #49A55E;
+   font-family:Arial;
+    color: #fff;
+    font-size: 20px;
+    text-decoration:none;
+cursor:pointer;
+}
+
+.botaoLogin3 {
+        padding: 18px;
+      height:25px; 
+   width: 200px; 
+   border:none!important;
+   display: inline-block;
+   background-color: #F32D2D;
+   font-family:Arial;
     color: #fff;
     font-size: 20px;
     text-decoration:none;
@@ -346,23 +484,54 @@ cursor:pointer;
 }
 
 
+
+
+
+.esqueceuSenha{
+    
+    cursor:pointer;
+    
+}
+
+.esqueceuSenha:after {
+	content: '' !important;
+	display: block !important;
+	margin: auto !important;
+	height: 1px !important;
+	width: 0px !important;
+	background: transparent;
+	transition: width .5s ease, background-color .2s ease !important;
+        
+ 
+}
+.esqueceuSenha:hover:after {
+	width: 50% !important;
+	background: #fff !important;
+        
+}
+
+
+
 .usuario{
    
-    margin: 10px;
+    
     position: relative;
-    top: 8%;
+   
     
     
     font-family:courier,arial,helvetica;
     color: #fff;
     font-size: 25px;
-     
+ 
+  
     
 }
 
+
+
 .scroll{
      width:100%;
-   height: calc(100vh - 100px);
+   height: calc(110vh - 100px);
     overflow: auto;
 }
 
@@ -382,6 +551,8 @@ cursor:pointer;
 
 .usuario input{
     
+    border: solid 1px #fff;
+    
     background-color: transparent;
     color:#fff;
     width: 350px; 
@@ -389,26 +560,15 @@ cursor:pointer;
   font-size: 20px;
 }
 
-.usuario select{
-    background-color: transparent;
-    color:#fff;
-    width: 350px; 
-  height: 40px;
-  font-size: 20px;
-    
-}
-.usuario select option{
-    
-    background-color: #282828;
-}
+
 
 
 
 .rh{
    
-    margin: 10px;
+   
     position: relative;
-    top: 8%;
+   
     
     
     font-family:courier,arial,helvetica;
@@ -419,7 +579,7 @@ cursor:pointer;
 }
 
 .rh input{
-    
+    border: solid 1px #fff;
     background-color: transparent;
     color:#fff;
     width: 350px; 
@@ -427,18 +587,7 @@ cursor:pointer;
   font-size: 20px;
 }
 
-.rh select{
-    background-color: transparent;
-    color:#fff;
-    width: 350px; 
-  height: 40px;
-  font-size: 20px;
-    
-}
-.rh select option{
-    
-    background-color: #282828;
-}
+
 
 
 .links{
@@ -662,8 +811,89 @@ cursor:pointer;
     display: none;
 }
 
+.menumobiletopo{
+    
+    background-color: #1E4564;
+     
+  margin: -7px;
+ 
+ margin-bottom: 10px;
+   padding-top:10px;
+  
+    position: static;
+   
+   
+   
+   
+    height: 50px; 
+    z-index: 99999;
+    
+    display: none;
+}
+
+
+
 @media screen and (max-width:700px)
 {
+    .scroll{
+        
+        
+        height: calc(95vh - 100px) !important;
+    }
+    .candidatomobile{
+    
+    display: block !important;
+}
+
+.centraliza{
+    
+    width: 100% !important;
+    
+    
+}
+.dadosacesso{
+    
+    width: 91% !important;
+     margin-bottom: 50px !important;
+    
+}
+
+.dadospessoais{
+   margin-bottom: 1% !important;
+    width: 91% !important;
+}
+
+.empresa{
+    margin-bottom: 1% !important;
+    width: 91% !important;
+}
+    
+    .usuario input{
+    
+     width: 100% !important;
+}
+
+.rh input{
+    width: 100% !important;
+    
+}
+
+.login input{
+    
+    width: 100% !important;
+}
+.border{
+    width: 90% !important;
+    
+}
+    
+    .menumobiletopo{
+        
+        display: block;
+        
+    }
+    
+    
    .menumobile
     {
         display: block;
@@ -735,11 +965,12 @@ cursor:pointer;
 .menu{
     
     display: none;
+  
 }
 
 .scrollDisc{
     
-      margin-top: -15%; 
+      margin-top: 0%; 
 }
 
 
@@ -752,31 +983,31 @@ cursor:pointer;
        bottom:0%;  
         
        margin-top: -15%; 
-       left:50%; 
+       left:0%; 
        top:100%;  
        width:50%; 
-       height:100%; 
+       height:40px !important;  
        background:#fff;
        color:#282828;
-       text-align: center;
+      
    
        padding-top: 15px;
        
   
    font-weight: bold ;
    
-   font-family:courier,arial,helvetica;
+   font-family:arial;
    
-    font-size: 30px;
+    font-size: 80%;
     text-decoration:none;
 cursor:pointer;
-border-left: 2px solid #282828;
+text-transform: uppercase;
+
 }
 
-
-#cadastrar {
+#cancelar2 {
          
-          
+         
           position:fixed; 
        z-index: 9999; 
        bottom:0%;  
@@ -784,21 +1015,89 @@ border-left: 2px solid #282828;
        margin-top: -15%; 
        left:0%; 
        top:100%;  
-       width:50%; 
-       height:70px;  
+       width:42%; 
+       height:40px !important;  
        background:#fff;
        color:#282828;
-       text-align: center;
+      
    
-       padding-top: 10px;
+       padding-top: 15px;
        
   
    font-weight: bold ;
    
-   font-family:courier,arial,helvetica;
+   font-family:arial;
    
-    font-size: 30px;
+    font-size: 80%;
     text-decoration:none;
+cursor:pointer;
+text-transform: uppercase;
+ border-right: 2px solid #282828 !important;
+}
+
+
+
+#cadastrar {
+         border-left: 2px solid #282828 !important;
+          border-right: 0;
+          border-top: 0;
+          border-bottom: 0;
+          position:fixed; 
+       z-index: 9999; 
+       bottom:0%;  
+        
+       margin-top: -15%; 
+       left:50%; 
+       top:100%;  
+       width:50%; 
+       height:55px !important;  
+       background:#fff;
+       color:#282828;
+       
+   
+     
+       padding-top: 10px;
+       text-transform: uppercase;
+  
+   font-weight: bold ;
+   
+   font-family:arial;
+   
+    font-size: 80%;
+    text-decoration:none !important;
+cursor:pointer;
+
+}
+
+
+#entrar {
+        
+          border-right: 0;
+          border-top: 0;
+          border-bottom: 0;
+          position:fixed; 
+       z-index: 9999; 
+       bottom:0%;  
+        font-size: 80%;
+       margin-top: -15%; 
+       left:50%; 
+       top:100%;  
+       width:50%; 
+       height:55px !important;  
+       background:#fff;
+       color:#282828;
+       
+   
+     
+       padding-top: 10px;
+       text-transform: uppercase;
+  
+   font-weight: bold ;
+   
+   font-family:arial;
+   
+ 
+    text-decoration:none !important;
 cursor:pointer;
 
 }
@@ -822,4 +1121,91 @@ cursor:pointer;
     text-align: center;
     font-family: arial;
    
+}
+
+.menu{
+    
+/*    background-color: #1E4564;*/
+     
+  margin: -7px;
+ 
+
+  border-bottom: 1px solid #fff;
+    position: static;
+    margin-bottom: 10px;
+   padding-top:10px;
+   
+   
+   
+    height: 50px; 
+    z-index: 99999;
+  
+}
+
+
+.titulo2{
+    
+  
+     text-decoration:none;
+     color: #fff;
+     font-size: 30px;
+     margin-left: 10px;
+    
+}
+
+.dadospessoais{
+  border: 2px solid #fff;
+   padding: 10px;
+    margin-left: 1%;
+   width:355px;
+    
+    height: 280px;
+    float: left !important;
+    
+}
+
+.empresa{
+  border: 2px solid #fff;
+  margin-left: 1%;
+   width: 355px; 
+   padding: 10px;
+    
+    height: 280px;
+    float: left !important;
+    
+}
+
+.dadosacesso{
+    margin-left: 1%;
+   padding: 10px;
+   width: 355px; 
+    border: 2px solid #fff;
+    height: 280px;
+   float: left !important;
+   
+    
+}
+
+.centraliza {
+
+width: 1180px; /* Valor da Largura */
+ max-width: 100%;
+   margin: 0 auto; 
+
+}
+
+.centraliza2{
+   margin: 0 auto;
+ padding-top:25%;
+ width: 50%;
+ 
+ /* Valor da Largura */ 
+    
+ 
+ 
+}
+
+.candidatomobile{
+    
+    display: none;
 }

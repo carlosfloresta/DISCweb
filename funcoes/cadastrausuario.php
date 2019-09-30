@@ -7,7 +7,9 @@ $email_usuario = mysqli_real_escape_string($conn, $_POST['email_usuario']);
 $cnpj_usuario = mysqli_real_escape_string($conn, $_POST['cpf_usuario']);
 $senha_usuario = mysqli_real_escape_string($conn, $_POST['senha_usuario']);
 $telefone_usuario = mysqli_real_escape_string($conn, $_POST['telefone_usuario']);
-$empresa_usuario = mysqli_real_escape_string($conn, $_POST['empresa_usuario']);
+
+
+$codigo_rh = mysqli_real_escape_string($conn, $_POST['codigo_acesso_rh']);
 $senha_usuario = md5($senha_usuario);
 
 
@@ -38,12 +40,16 @@ if (isset($resultado2)) {
         $_SESSION['cpfexiste'] = "";
         header("Location: ../index.php");
     } else {
-
-
+        
+          $pegaCodigo = mysqli_query($conn, "SELECT * FROM rh WHERE codigo_acesso = '$codigo_rh'");
+    $resultado4 = mysqli_fetch_assoc($pegaCodigo);
+        
+        if (isset($resultado4)) {
+            $empresa_usuario = $resultado4["id"];
 
         $result_login = "INSERT INTO login(email, senha, nivel) values('$email_usuario', '$senha_usuario', '1')";
         $resultado_login = mysqli_query($conn, $result_login);
-
+        
 
 
 
@@ -61,6 +67,13 @@ if (isset($resultado2)) {
         } else {
             header("Location: ../index.php");
         }
+    }else{
+        
+         $_SESSION['codigonaoexiste'] = "";
+        
+        header("Location: ../index.php"); 
+        
+    }
     }
 }
 mysqli_close($conn);

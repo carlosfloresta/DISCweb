@@ -8,19 +8,24 @@ include('funcoes/session.php');
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>DISC</title>
         <link rel="stylesheet" href="css/teste.css">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
 
     </head>
     <body>
 
-        <nav>
+        <nav class="menu">
+            <a class="titulo2" style="font-family: 'Pacifico', cursive;" href="usuario.php">Disc</a>
+            <a class="botao"  href="sair.php">Sair</a>
+          
 
-            <a class="botao" href="sair.php">Sair</a>
-            <a class="botao" href="usuario.php">Home</a>
 
+        </nav>  
+        
+        <div id="particles-js"></div>
+         <h1 style="font-family: 'Pacifico', cursive;" >1 - 28</h1>
+         <br>
 
-        </nav>    
-
-        <h1>1</h1>
+       <h2 style="font-family: 'Pacifico', cursive;" >Escolha a palavra que mais e menos lhe define:</h2>
 
         <section class="sessao" id="sessao">
 
@@ -39,7 +44,7 @@ include('funcoes/session.php');
                 <input type="radio" name="mais" id="quadradomais" />
                 <label class="label" for="quadradomais" id="labelquadradomais"><img  alt=""></label>
                 <input type="radio" name="mais" id="zmais" />
-                <label class="label" for="zmais" style="color:white;  height: 40px; font-size: 45px; font-family: arial;"></label>
+                <label class="label" for="zmais" ></label>
                 <input type="radio" name="mais" id="musicamais" />
                 <label class="label" for="musicamais"><img  alt=""></label>
                 <input type="radio" name="mais" id="triangulomais" />
@@ -59,7 +64,7 @@ include('funcoes/session.php');
                 <input type="radio" name="menos" id="quadradomenos" />
                 <label class="label2" for="quadradomenos"><img alt=""></label>
                 <input type="radio" name="menos" id="zmenos" />
-                <label class="label2" for="zmenos" style="color:white;  height: 40px; font-size: 45px; font-family: arial;"></label>
+                <label class="label2" for="zmenos"></label>
                 <input type="radio" name="menos" id="musicamenos" />
                 <label class="label2" for="musicamenos"><img alt=""></label>
                 <input type="radio" name="menos" id="triangulomenos" />
@@ -73,9 +78,9 @@ include('funcoes/session.php');
                 <label class='label' for='n2menos' style="display: none;"><img  alt=''></label>
             </div>  
 
-
+                
         </section>
-        <a class="botao" style="margin-right:100px;" id="proximo" onclick="proximapagina();">PRÓXIMO</a>
+        <a class="botaoproximo" style="margin-right:100px;" id="proximo" onclick="proximapagina();">></a>
 
 
         <form id="form" method="POST" action="funcoes/cadastrateste.php">
@@ -89,7 +94,9 @@ include('funcoes/session.php');
             <input value="" style="display: none" id="recebezmenos" name="recebezmenos">
             <input value="" style="display: none" id="recebemusicamenos" name="recebemusicamenos">
             <input value="" style="display: none" id="recebetriangulomenos" name="recebetriangulomenos">
-            <center>  <button  class="botao2" type="submit" style=" display: none" id="finalizar">Enviar Teste</button></center> 
+            <br>
+            <br>
+            <button  class="botao2" type="submit" style=" display: none; position: fixed; left: 50%;  transform: translate(-50%, -50%);" id="finalizar">Enviar Teste</button>
 
 
         </form>
@@ -158,7 +165,7 @@ include('funcoes/session.php');
 
                 for (var i = 0; i <= count; i++) {
 
-                    document.getElementsByTagName("h1")[0].innerHTML = i;
+                    document.getElementsByTagName("h1")[0].innerHTML = i + " - 28";
                     switch (i) {
 
 
@@ -174,7 +181,7 @@ include('funcoes/session.php');
                                     "<center>   <p>MAIS</p> </center><input type='radio' name='mais' id='musicamais'/>\n\
                                      <label class='label' for='musicamais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='zmais' />\n\
-                                        <label class='label' for='zmais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='zmais' ></label>\n\
                                         <input type='radio' name='mais' id='quadradomais' />\n\
                                         <label class='label' for='quadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
@@ -184,7 +191,7 @@ include('funcoes/session.php');
                                     "<center>   <p>MENOS</p> </center><input type='radio' name='menos' id='musicamenos'/>\n\
                                      <label class='label2' for='musicamenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='zmenos' />\n\
-                                        <label class='label2' for='zmenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='zmenos' ></label>\n\
                                         <input type='radio' name='menos' id='quadradomenos' />\n\
                                         <label class='label2' for='quadradomenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='nmenos' />\n\
@@ -222,7 +229,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='nmenos'/>\n\
                                         <label class='label2' for='nmenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='musicamenos' />\n\
-                                        <label class='label2' for='musicamenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='musicamenos' ></label>\n\
                                         <input type='radio' name='menos' id='zmenos' />\n\
                                         <label class='label2' for='zmenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
@@ -247,7 +254,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='quadradomais'/>\n\
                                         <label class='label' for='quadradomais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='musicamais' />\n\
-                                        <label class='label' for='musicamais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='musicamais' ></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
                                         <label class='label' for='triangulomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='zmais' />\n\
@@ -259,7 +266,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='quadradomenos'/>\n\
                                         <label class='label2' for='quadradomenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='musicamenos' />\n\
-                                        <label class='label2' for='musicamenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='musicamenos'></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
                                         <label class='label2' for='triangulomenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='zmenos' />\n\
@@ -282,7 +289,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='zmais'/>\n\
                                         <label class='label' for='zmais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='musicamais' />\n\
-                                        <label class='label' for='musicamais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='musicamais' ></label>\n\
                                         <input type='radio' name='mais' id='quadradomais' />\n\
                                         <label class='label' for='quadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
@@ -294,7 +301,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='zmenos'/>\n\
                                         <label class='label2' for='zmenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='musicamenos' />\n\
-                                        <label class='label2' for='musicamenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='musicamenos' ></label>\n\
                                         <input type='radio' name='menos' id='quadradomenos' />\n\
                                         <label class='label2' for='quadradomenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
@@ -316,7 +323,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='triangulomais'/>\n\
                                         <label class='label' for='triangulomais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='quadradomais' />\n\
-                                        <label class='label' for='quadradomais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='quadradomais' ></label>\n\
                                         <input type='radio' name='mais' id='nmais' />\n\
                                         <label class='label' for='nmais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='n2mais' />\n\
@@ -332,7 +339,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='triangulomenos'/>\n\
                                         <label class='label2' for='triangulomenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='nmenos' />\n\
-                                        <label class='label2' for='nmenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='nmenos' ></label>\n\
                                         <input type='radio' name='menos' id='musicamenos' />\n\
                                         <label class='label2' for='musicamenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='zmenos' />\n\
@@ -357,7 +364,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='quadradomais'/>\n\
                                         <label class='label' for='quadradomais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='musicamais' />\n\
-                                        <label class='label' for='musicamais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='musicamais' ></label>\n\
                                         <input type='radio' name='mais' id='zmais' />\n\
                                         <label class='label' for='zmais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='nmais' />\n\
@@ -399,7 +406,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='quadradomais'/>\n\
                                         <label class='label' for='quadradomais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='musicamais' />\n\
-                                        <label class='label' for='musicamais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='musicamais' ></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
                                         <label class='label' for='triangulomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='zmais' />\n\
@@ -411,7 +418,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='quadradomenos'/>\n\
                                         <label class='label2' for='quadradomenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='nmenos' />\n\
-                                        <label class='label2' for='nmenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='nmenos' ></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
                                         <label class='label2' for='triangulomenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='zmenos' />\n\
@@ -434,7 +441,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='musicamais'/>\n\
                                         <label class='label' for='musicamais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
-                                        <label class='label' for='triangulomais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='triangulomais'></label>\n\
                                         <input type='radio' name='mais' id='quadradomais' />\n\
                                         <label class='label' for='quadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='nmais' />\n\
@@ -448,7 +455,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='musicamenos'/>\n\
                                         <label class='label2' for='musicamenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
-                                        <label class='label2' for='triangulomenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='triangulomenos' ></label>\n\
                                         <input type='radio' name='menos' id='quadradomenos' />\n\
                                         <label class='label2' for='quadradomenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='nmenos' />\n\
@@ -471,7 +478,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='zmais'/>\n\
                                         <label class='label' for='zmais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='quadradomais' />\n\
-                                        <label class='label' for='quadradomais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='quadradomais'></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
                                         <label class='label' for='triangulomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='nmais' />\n\
@@ -485,7 +492,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='zmenos'/>\n\
                                         <label class='label2' for='zmenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='quadradomenos' />\n\
-                                        <label class='label2' for='quadradomenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='quadradomenos' ></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
                                         <label class='label2' for='triangulomenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='musicamenos' />\n\
@@ -506,7 +513,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='musicamais'/>\n\
                                         <label class='label' for='musicamais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
-                                        <label class='label' for='triangulomais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='triangulomais'></label>\n\
                                         <input type='radio' name='mais' id='zmais' />\n\
                                         <label class='label' for='zmais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='quadradomais' />\n\
@@ -518,7 +525,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='musicamenos'/>\n\
                                         <label class='label2' for='musicamenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
-                                        <label class='label2' for='triangulomenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='triangulomenos' ></label>\n\
                                         <input type='radio' name='menos' id='zmenos' />\n\
                                         <label class='label2' for='zmenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='quadradomenos' />\n\
@@ -540,7 +547,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='quadradomais'/>\n\
                                         <label class='label' for='quadradomais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
-                                        <label class='label' for='triangulomais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='triangulomais' ></label>\n\
                                         <input type='radio' name='mais' id='musicamais' />\n\
                                         <label class='label' for='musicamais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='zmais' />\n\
@@ -552,7 +559,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='quadradomenos'/>\n\
                                         <label class='label2' for='quadradomenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
-                                        <label class='label2' for='triangulomenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='triangulomenos' ></label>\n\
                                         <input type='radio' name='menos' id='musicamenos' />\n\
                                         <label class='label2' for='musicamenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='zmenos' />\n\
@@ -573,7 +580,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='zmais'/>\n\
                                         <label class='label' for='zmais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
-                                        <label class='label' for='triangulomais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='triangulomais' ></label>\n\
                                         <input type='radio' name='mais' id='quadradomais' />\n\
                                         <label class='label' for='quadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='musicamais' />\n\
@@ -585,7 +592,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='zmenos'/>\n\
                                         <label class='label2' for='zmenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
-                                        <label class='label2' for='triangulomenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='triangulomenos' ></label>\n\
                                         <input type='radio' name='menos' id='quadradomenos' />\n\
                                         <label class='label2' for='quadradomenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='musicamenos' />\n\
@@ -607,7 +614,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='musicamais'/>\n\
                                         <label class='label' for='musicamais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
-                                        <label class='label' for='triangulomais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='triangulomais'></label>\n\
                                         <input type='radio' name='mais' id='zmais' />\n\
                                         <label class='label' for='zmais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='quadradomais' />\n\
@@ -619,7 +626,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='musicamenos'/>\n\
                                         <label class='label2' for='musicamenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
-                                        <label class='label2' for='triangulomenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='triangulomenos' ></label>\n\
                                         <input type='radio' name='menos' id='zmenos' />\n\
                                         <label class='label2' for='zmenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='quadradomenos' />\n\
@@ -641,7 +648,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='quadradomais'/>\n\
                                         <label class='label' for='quadradomais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='zmais' />\n\
-                                        <label class='label' for='zmais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='zmais' ></label>\n\
                                         <input type='radio' name='mais' id='musicamais' />\n\
                                         <label class='label' for='musicamais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
@@ -653,7 +660,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='quadradomenos'/>\n\
                                         <label class='label2' for='quadradomenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='zmenos' />\n\
-                                        <label class='label2' for='zmenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='zmenos' ></label>\n\
                                         <input type='radio' name='menos' id='musicamenos' />\n\
                                         <label class='label2' for='musicamenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
@@ -673,7 +680,7 @@ include('funcoes/session.php');
                                     "<center>   <p>MAIS</p> </center><input type='radio' name='mais' id='musicamais'/>\n\
                                      <label class='label' for='musicamais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='zmais' />\n\
-                                        <label class='label' for='zmais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='zmais' ></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
                                         <label class='label' for='triangulomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='quadradomais' />\n\
@@ -683,7 +690,7 @@ include('funcoes/session.php');
                                     "<center>   <p>MENOS</p> </center><input type='radio' name='menos' id='musicamenos'/>\n\
                                      <label class='label2' for='musicamenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='zmenos' />\n\
-                                        <label class='label2' for='zmenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='zmenos'></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
                                         <label class='label2' for='triangulomenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='quadradomenos' />\n\
@@ -705,7 +712,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='quadradomais'/>\n\
                                         <label class='label' for='quadradomais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
-                                        <label class='label' for='triangulomais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='triangulomais' ></label>\n\
                                         <input type='radio' name='mais' id='zmais' />\n\
                                         <label class='label' for='zmais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='musicamais' />\n\
@@ -717,7 +724,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='quadradomenos'/>\n\
                                         <label class='label2' for='quadradomenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
-                                        <label class='label2' for='triangulomenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='triangulomenos' ></label>\n\
                                         <input type='radio' name='menos' id='zmenos' />\n\
                                         <label class='label2' for='zmenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='musicamenos' />\n\
@@ -738,7 +745,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='triangulomais'/>\n\
                                         <label class='label' for='triangulomais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='zmais' />\n\
-                                        <label class='label' for='zmais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='zmais' ></label>\n\
                                         <input type='radio' name='mais' id='musicamais' />\n\
                                         <label class='label' for='musicamais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='quadradomais' />\n\
@@ -750,7 +757,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='triangulomenos'/>\n\
                                         <label class='label2' for='triangulomenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='nmenos' />\n\
-                                        <label class='label2' for='nmenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='nmenos' ></label>\n\
                                         <input type='radio' name='menos' id='musicamenos' />\n\
                                         <label class='label2' for='musicamenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='quadradomenos' />\n\
@@ -774,7 +781,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='zmais'/>\n\
                                         <label class='label' for='zmais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='quadradomais' />\n\
-                                        <label class='label' for='quadradomais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='quadradomais' ></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
                                         <label class='label' for='triangulomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='nmais' />\n\
@@ -788,7 +795,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='zmenos'/>\n\
                                         <label class='label2' for='zmenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='quadradomenos' />\n\
-                                        <label class='label2' for='quadradomenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='quadradomenos' ></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
                                         <label class='label2' for='triangulomenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='musicamenos' />\n\
@@ -809,7 +816,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='quadradomais'/>\n\
                                         <label class='label' for='quadradomais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
-                                        <label class='label' for='triangulomais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='triangulomais' ></label>\n\
                                         <input type='radio' name='mais' id='nmais' />\n\
                                         <label class='label' for='nmais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='zmais' />\n\
@@ -823,7 +830,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='quadradomenos'/>\n\
                                         <label class='label2' for='quadradomenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
-                                        <label class='label2' for='triangulomenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='triangulomenos' ></label>\n\
                                         <input type='radio' name='menos' id='musicamenos' />\n\
                                         <label class='label2' for='musicamenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='zmenos' />\n\
@@ -844,7 +851,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='musicamais'/>\n\
                                         <label class='label' for='musicamais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
-                                        <label class='label' for='triangulomais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='triangulomais' ></label>\n\
                                         <input type='radio' name='mais' id='quadradomais' />\n\
                                         <label class='label' for='quadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='zmais' />\n\
@@ -856,7 +863,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='musicamenos'/>\n\
                                         <label class='label2' for='musicamenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
-                                        <label class='label2' for='triangulomenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='triangulomenos' ></label>\n\
                                         <input type='radio' name='menos' id='quadradomenos' />\n\
                                         <label class='label2' for='quadradomenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='zmenos' />\n\
@@ -877,7 +884,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='quadradomais'/>\n\
                                         <label class='label' for='quadradomais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='musicamais' />\n\
-                                        <label class='label' for='musicamais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='musicamais' ></label>\n\
                                         <input type='radio' name='mais' id='zmais' />\n\
                                         <label class='label' for='zmais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
@@ -889,7 +896,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='quadradomenos'/>\n\
                                         <label class='label2' for='quadradomenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='musicamenos' />\n\
-                                        <label class='label2' for='musicamenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='musicamenos' ></label>\n\
                                         <input type='radio' name='menos' id='zmenos' />\n\
                                         <label class='label2' for='zmenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
@@ -910,7 +917,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='quadradomais'/>\n\
                                         <label class='label' for='quadradomais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='musicamais' />\n\
-                                        <label class='label' for='musicamais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='musicamais' ></label>\n\
                                         <input type='radio' name='mais' id='zmais' />\n\
                                         <label class='label' for='zmais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
@@ -922,7 +929,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='quadradomenos'/>\n\
                                         <label class='label2' for='quadradomenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='musicamenos' />\n\
-                                        <label class='label2' for='musicamenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='musicamenos' ></label>\n\
                                         <input type='radio' name='menos' id='zmenos' />\n\
                                         <label class='label2' for='zmenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
@@ -943,7 +950,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='quadradomais'/>\n\
                                         <label class='label' for='quadradomais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
-                                        <label class='label' for='triangulomais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='triangulomais' ></label>\n\
                                         <input type='radio' name='mais' id='zmais' />\n\
                                         <label class='label' for='zmais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='musicamais' />\n\
@@ -955,7 +962,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='quadradomenos'/>\n\
                                         <label class='label2' for='quadradomenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
-                                        <label class='label2' for='triangulomenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='triangulomenos' ></label>\n\
                                         <input type='radio' name='menos' id='zmenos' />\n\
                                         <label class='label2' for='zmenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='musicamenos' />\n\
@@ -976,7 +983,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='zmais'/>\n\
                                         <label class='label' for='zmais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='musicamais' />\n\
-                                        <label class='label' for='musicamais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='musicamais' ></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
                                         <label class='label' for='triangulomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='quadradomais' />\n\
@@ -988,7 +995,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='zmenos'/>\n\
                                         <label class='label2' for='zmenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='musicamenos' />\n\
-                                        <label class='label2' for='musicamenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='musicamenos' ></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
                                         <label class='label2' for='triangulomenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='quadradomenos' />\n\
@@ -1009,7 +1016,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='quadradomais'/>\n\
                                         <label class='label' for='quadradomais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='musicamais' />\n\
-                                        <label class='label' for='musicamais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='musicamais' ></label>\n\
                                         <input type='radio' name='mais' id='zmais' />\n\
                                         <label class='label' for='zmais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
@@ -1021,7 +1028,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='quadradomenos'/>\n\
                                         <label class='label2' for='quadradomenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='musicamenos' />\n\
-                                        <label class='label2' for='musicamenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='musicamenos'></label>\n\
                                         <input type='radio' name='menos' id='zmenos' />\n\
                                         <label class='label2' for='zmenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
@@ -1042,7 +1049,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='mais' id='zmais'/>\n\
                                         <label class='label' for='zmais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
-                                        <label class='label' for='triangulomais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='triangulomais' ></label>\n\
                                         <input type='radio' name='mais' id='quadradomais' />\n\
                                         <label class='label' for='quadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='musicamais' />\n\
@@ -1054,7 +1061,7 @@ include('funcoes/session.php');
                                         <input type='radio' name='menos' id='zmenos'/>\n\
                                         <label class='label2' for='zmenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
-                                        <label class='label2' for='triangulomenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='triangulomenos' ></label>\n\
                                         <input type='radio' name='menos' id='quadradomenos' />\n\
                                         <label class='label2' for='quadradomenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='musicamenos' />\n\
@@ -1074,7 +1081,7 @@ include('funcoes/session.php');
                                     "<center>   <p>MAIS</p> </center><input type='radio' name='mais' id='musicamais'/>\n\
                                      <label class='label' for='musicamais' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='zmais' />\n\
-                                        <label class='label' for='zmais' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label' for='zmais'></label>\n\
                                         <input type='radio' name='mais' id='quadradomais' />\n\
                                         <label class='label' for='quadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='mais' id='triangulomais' />\n\
@@ -1084,7 +1091,7 @@ include('funcoes/session.php');
                                     "<center>   <p>MENOS</p> </center><input type='radio' name='menos' id='musicamenos'/>\n\
                                      <label class='label2' for='musicamenos' id='labelquadradomais'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='zmenos' />\n\
-                                        <label class='label2' for='zmenos' style='color:white;  height: 40px; font-size: 45px; font-family: arial;'></label>\n\
+                                        <label class='label2' for='zmenos' ></label>\n\
                                         <input type='radio' name='menos' id='quadradomenos' />\n\
                                         <label class='label2' for='quadradomenos'><img  alt=''></label>\n\
                                         <input type='radio' name='menos' id='triangulomenos' />\n\
@@ -1164,8 +1171,8 @@ include('funcoes/session.php');
 
                 if (count == 29) {
 
-                    document.getElementsByTagName("h1")[0].innerHTML = "Teste Finalizado";
-
+                    document.getElementsByTagName("h2")[0].innerHTML = "Teste Finalizado";
+                            document.getElementsByTagName("h1")[0].style.display = 'none';
                     document.getElementById("proximo").style.display = 'none';
                     document.getElementById("sessao").style.display = 'none';
                     document.getElementById("finalizar").style.display = 'block';
@@ -1192,6 +1199,9 @@ include('funcoes/session.php');
 
 
         </script>
+       
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+         <script src="js/particle-stars.js"></script>
     </body>
 </html>
 

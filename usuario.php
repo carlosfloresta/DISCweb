@@ -9,19 +9,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>DISC</title>
         <link rel="stylesheet" href="css/usuario.css">
-
+        <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
     </head>
     <body>
         
-        <nav>
+        <nav class="menu">
+            <a class="titulo2" style="font-family: 'Pacifico', cursive;" href="usuario.php">Disc</a>
             
             <a class="botao" href="sair.php">Sair</a>
            
             
             
-        </nav>    
+        </nav>  
         
-        <h1>Bem-Vindo, <?php echo $login_session;  ?>.</h1>
+         <div id="particles-js"></div>
+        
+        <h1 style="font-family: 'Pacifico', cursive;">Bem-Vindo, <?php echo $login_session;  ?>.</h1>
         <h2>O TESTE DISC É COMPOSTO POR 28 QUADRANTES.<BR> ESCOLHA UMA OPÇÃO QUE MAIS SE PAREÇA COM VOCÊ E UMA QUE MENOS SE ADEQUE AO SEU PERFIL.</h2>
        
         <?php
@@ -63,5 +66,10 @@
     
     
     </script>
+    
+   
+    
+       <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+         <script src="js/particle-stars.js"></script>
     </body>
 </html>

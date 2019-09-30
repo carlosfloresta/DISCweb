@@ -1,5 +1,5 @@
 body{  
-    background-color: #282828;    
+     background-color: #1E2935; 
 }
 h1{
     
@@ -15,37 +15,49 @@ h2{
     font-family:Calibri;
 }
 
-nav{
-    position: static;
-    margin: 10px;
-   padding-left: -100px;
-    width: 95%;
-    height: 50px; 
-    z-index: 1;
-   
-}
+
 
  .botao {
         padding: 10px;
-       
-   border: 1px solid #fff;
+       margin-right: 10px;
+   border-left: 1px solid #fff;
+   border-right: 1px solid #fff;
    
-   
-   font-family:courier,arial,helvetica;
+   font-family:arial;
     color: #fff;
-    font-size: 20px;
+    font-size: 15px;
+    text-transform: uppercase;
     text-decoration:none;
 cursor:pointer;
 float:right;
+
+font-weight: bold;
+}
+.botao:after {
+	content: '' !important;
+	display: block !important;
+	margin: auto !important;
+	height: 2px !important;
+	width: 0px !important;
+	background: transparent;
+	transition: width .5s ease, background-color .2s ease !important;
+        
+ 
+}
+.botao:hover:after {
+	width: 100% !important;
+	background: #fff !important;
+        
 }
 
  .botaoinicairteste {
         padding: 10px;
-       
+       z-index: 9999;
+       position: fixed;
    border: 1px solid #fff;
    background: transparent;
    
-   font-family:courier,arial,helvetica;
+   font-family:arial;
     color: #fff;
     font-size: 20px;
     text-decoration:none;
@@ -95,6 +107,8 @@ h3{
       
     }
     
+  
+    
    
     
  
@@ -103,3 +117,42 @@ h3{
   
 }
 
+  .menu{
+        
+      margin: -7px;
+ 
+
+  border-bottom: 1px solid #fff;
+    position: static;
+    margin-bottom: 10px;
+   padding-top:10px;
+   
+   
+   
+    height: 50px; 
+    z-index: 99999;
+        
+    }
+    
+    
+.titulo2{
+    
+  
+     text-decoration:none;
+     color: #fff;
+     font-size: 30px;
+     margin-left: 10px;
+    
+}
+
+
+
+
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+  position: absolute;
+  width: 95%;
+  height: 80%;
+}

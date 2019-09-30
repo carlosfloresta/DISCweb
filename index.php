@@ -12,7 +12,8 @@ include_once("funcoes/conexao.php");
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>DISC</title>
         <link rel="stylesheet" href="css/index.css">
-
+        <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/particule.css">
     </head>
     <body>
 
@@ -22,13 +23,23 @@ include_once("funcoes/conexao.php");
 
         <nav class="menu">
             
+            <a class="titulo2" style="font-family: 'Pacifico', cursive;" href="index.php">Disc</a>
             
-            <a class="botao"  onclick="mostraLogin()">Login</a>
-            <a class="botao" onclick="mostraCadastro()">Cadastrar</a>
+             <a class="botaoDuvida">?</a>
+            <a class="botao"  onclick="mostraLogin()">LOGIN</a>
+            <a class="botao" onclick="mostraCadastro()">CADASTRAR</a>
           
-            <a class="botao" href="index.php">Home</a>
+<!--            <a class="botaoRedesSociais" href="index.php">ENTRAR COM REDES SOCIAIS</a>-->
+        
+<!--              <a class="botao" onclick="mostraCadastro()">Conheça nosso Sistema</a>-->
+        </nav>
+        
+        <nav class="menumobiletopo">
             
-              <a class="botao" onclick="mostraCadastro()">Conheça nosso Sistema</a>
+            <a class="titulo2" style="font-family: 'Pacifico', cursive;" href="index.php">Disc</a>
+            
+             <a class="botaoDuvida">?</a>
+  
         </nav>
         
         <nav class="menumobile" id="menumobile">
@@ -38,16 +49,19 @@ include_once("funcoes/conexao.php");
             <a class="botaomobile2" onclick="mostraCadastro()">Cadastrar</a>
             <a class="botaomobile1"  onclick="mostraLogin()">Login</a>
         </nav>
+        
+       
+        <div id="particles-js"></div>
 
 
         <div id="disc" class="scrollDisc">
            
-<h1>Avaliação Comportamental</h1>
+<h1 >Avaliação Comportamental</h1>
 <br>
 
         <div class="disc" >
             
-            <h2 >DISC</h2>
+            <h2 style="font-family: 'Pacifico', cursive;">DISC</h2>
 
             <div class="discmouse">
                 <a class="dominancia" onclick="mostraDominancia()" >D<br>o<br>m<br>i<br>n<br>â<br>n<br>c<br>i<br>a</a>
@@ -115,8 +129,8 @@ include_once("funcoes/conexao.php");
                 <h1>Login</h1>
                 <center> <form class="login"   method="POST" action="funcoes/validalogin.php">
             
-            <div class="links"><a href="index.php" style="text-decoration: none">Home</a><span> > </span><a>Login</a> </div> 
-            <br><br>
+            <br>
+            <div class="border">
             <div>
                 <label>Email:</label>
                 <input type="email" name="email" required id="email">
@@ -127,10 +141,37 @@ include_once("funcoes/conexao.php");
                 <input type="password" name="senha" required id="senha">
             </div>
             <br>
-          <a style="font-size: 15px" >Esqueceu a senha?</a>
-          <a class="botaoLogin2" id="cancelar"  href="index.php">Cancelar</a>
-            <button class="botaoLogin2" id="cadastrar" type="submit">Entrar</button>
+            <a style="font-size: 15px" class="esqueceuSenha" onclick="mostraEsqueceuSenha()" >Esqueceu a senha?</a><BR>
+          
+            <button class="botaoLogin2" id="entrar" type="submit">ENTRAR</button>
+            <a class="botaoLogin3" id="cancelar2"  href="index.php">CANCELAR</a>
+            </div>
             
+ 
+        </form> </center>
+                
+                 
+                </div>
+        
+        
+        <!--      form esqueceu senha  -->
+        <div id="esqueceuSenha" style="display: none">
+                <h1>Esqueceu a senha?</h1>
+                <center> <form class="login"   method="POST" action="funcoes/esqueceusenha.php">
+            
+            <br>
+            <div class="border">
+            <div>
+                <label>Email:</label>
+                <input type="email" name="email" required id="email">
+            </div>
+           
+            <br>
+           
+          
+            <button class="botaoLogin2" id="cadastrar" type="submit">ENVIAR</button>
+            <a class="botaoLogin3" id="cancelar"  href="index.php">CANCELAR</a>
+            </div>
             
  
         </form> </center>
@@ -164,24 +205,7 @@ include_once("funcoes/conexao.php");
         ?>
 
 
-        <?php
-        //Recuperando o valor da variável global, os erro de login.
-        if (isset($_SESSION['logindeslogado'])) {
-            ?>
-            <div class="modalalert" style="display: block;" id="modalalert" ><div class="content">
-                    <center>
-                        <img src="img/alert.png">
-                        <h2 style="color: #282828; font-family: arial;">Saiu...</h2>
-                        <h3 style="color: #282828; font-family: arial;">Deslogado com sucesso</h3>
-                        <a onclick="fecharAlert()">OK</a>
-
-                    </center></div><?php unset($_SESSION['logindeslogado']); ?>
-
-            </div>
-    <?php
-    unset($_SESSION['logindeslogado']);
-}
-?>
+      
 
 
         <!--      form login  -->      
@@ -196,7 +220,7 @@ include_once("funcoes/conexao.php");
             <div class="links"><a href="index.php" style="text-decoration: none">Home</a><span> > </span><a>Cadastrar</a> </div> 
             <br><br>
 
-            <a class="opcao" onclick="mostraUsuario()">Usuário a ser Avaliado</a>
+            <a class="opcao" onclick="mostraUsuario()">Candidato(a)</a>
 
 
             <a class="opcao" onclick="mostraRh()">RH/Psicólogo(a)</a>
@@ -207,60 +231,69 @@ include_once("funcoes/conexao.php");
 
     <!--    form usuario-->
 
-    <div class="scroll" id="usuario" style="display: none">
-        <h1>Usuário a ser Avaliado</h1>
-        
-        <form class="usuario"  method="POST" action="funcoes/cadastrausuario.php">
-            <div class="links"><a href="index.php" style="text-decoration: none">Home</a><span> > </span><a onclick="mostraCadastro()">Cadastrar</a> <span> > </span><a>Usuário a ser Avaliado</a> </div> 
-            <br>
+    <div class="scroll" id="usuario" style="display: none; ">
+        <h1>Candidato(a)</h1>
+        <center>
+        <form class="usuario"   method="POST" action="funcoes/cadastrausuario.php">
+           
             <div id="alerta"></div>
             <br>
-            
-            <div>
+          
+            <div class="centraliza">
+            <div class="dadospessoais">
+                <center>  <p>Dados Pessoais</p></center>
                 <label>Nome:</label>
                 <input type="text" name="nome_usuario" required id="nome_usuario">
                 <input style="display: none" type="text" name="cpf_usuario" required id="cpf_usuario">
                 <label>CPF:</label>
                 <input type="text" name="cpf1" onkeypress="return mask(event, this, '###.###.###-##')" maxlength="14" required id="cpf1">
-
-            </div>
-            <br>
-            <div>
-                 <input style="display: none" type="text" name="telefone_usuario" required id="telefone_usuario">
+                <input style="display: none" type="text" name="telefone_usuario" required id="telefone_usuario">
                 <label>Telefone:</label>
                 <input type="text" name="telefone1"  maxlength="13" onkeypress="return mask(event, this, '## #####-####')"  required id="telefone1">
+            </div>
+           
+            <div class="empresa">
+                 <center>  <p>RH/Psicólogo</p></center>
                 
                 
-                <label>Selecione a empresa:</label>
+            
                 
-                  
-                    <?php $sql  = mysqli_query($conn, "select * from rh");?>
-            <select name="empresa_usuario" id="empresa_usuario"><?php
-              while($resultado = mysqli_fetch_array($sql)){ ?>     
-                  <option value="<?=  $resultado['id'] ?>"><?php echo $resultado['nome']; ?></option>
-                  <?php } ?>
-    
-                </select>
+                 <label>Código de Acesso:</label>
+                <input type="text" name="codigo_acesso_rh" required id="codigo_acesso_rh">
 
             </div>
-            <br>
-            <div>
+           
+            <div class="dadosacesso">
+                 <center>  <p>Dados de Acesso</p></center>
                 <label>Email:</label>
                 <input type="email" name="email_usuario" required id="email_usuario">
                 <input style="display: none" type="password" name="senha_usuario" required id="senha_usuario">
                 <label>Senha:</label>
                 <input type="password"  required id="senha1"  maxlength="25">
-                <br><br>
+               
                 <label>Confirme a senha:</label>
                 <input type="password" required id="senha2"  maxlength="25">
             </div>
-            <br>
-            <a class="botaoLogin" id="cancelar"  href="index.php">Cancelar</a>
-            <button class="botaoLogin" id="cadastrar" onclick="confirmaSenha()" type="submit">Cadastrar</button>
-             <br>   
+                
+                </div>
+               
+            
+  
+            
+            
+            <div class="centraliza2">
+               
+            <a class="cancelar" id="cancelar"  href="index.php">Cancelar</a>
+            <button class="cadastrar" id="cadastrar" onclick="confirmaSenha()" type="submit">Cadastrar</button>
+             
+             </div>
+             
 <br>
 <br>
+
         </form>
+            
+            </center>
 
     </div> 
     
@@ -287,30 +320,35 @@ include_once("funcoes/conexao.php");
 
     <div class="scroll" id="rh" style="display: none" >
         <h1>RH/Psicólogo(a)</h1>
+        <center>
         <form class="rh" method="POST" action="funcoes/cadastrarh.php">
-            <div class="links"><a href="index.php" style="text-decoration: none">Home</a><span> > </span><a onclick="mostraCadastro()">Cadastrar</a> <span> > </span><a>RH/Psicologo(a)</a> </div> 
-            <br>
+           
              <div id="alerta_rh"></div>
             <br>
-            <div>
+            
+            <div class="centraliza">
+            <div class="dadospessoais">
+                 <center>  <p>Dados Pessoais</p></center>
                 <label>Nome/Razão Social:</label>
                 <input type="text" name="nome_rh" required id="nome_rh">
                  <input style="display: none" type="text" name="cnpj_rh" required id="cnpj_rh">
                 <label>CPF/CNPJ:</label>
                 <input type="text" name="cpf2" onkeypress="return mask(event, this,'##.###.###/####-##')" maxlength="18" required id="cpf2">
-
-            </div>
-            <br>
-            <div>
                 <input style="display: none" type="text" name="telefone_rh" required id="telefone_rh">
                 <label>Telefone:</label>
                 <input type="tel" name="telefone2" maxlength="13" onkeypress="return mask(event, this, '## #####-####')" required id="telefone2">
-
-
-
             </div>
-            <br>
-            <div>
+                
+                <div class="empresa">
+                     <center>  <p>RH/Psicólogo</p></center>
+                    <label>Código de Acesso:</label>
+                <input type="text" name="codigo_rh" required id="codigo_rh">
+                    
+                </div>
+           
+           
+                <div class="dadosacesso">
+                     <center>  <p>Dados de Acesso</p></center>
                 <label>Email:</label>
                 <input type="email" name="email_rh" required id="email_rh">
 
@@ -319,19 +357,27 @@ include_once("funcoes/conexao.php");
                 
                 <label>Senha:</label>
                 <input type="password"  required id="senha3" maxlength="25" >
-                <br><br>
+             
                 <label>Confirme a senha:</label>
                 <input type="password" required id="senha4" maxlength="25">
                 
             </div>
-            <br>
-            <a class="botaoLogin" id="cancelar"  href="index.php">Cancelar</a>
-            <button class="botaoLogin" id="cadastrar" onclick="confirmaSenha2()"  type="submit">Cadastrar</button>
-            <br>
-            <br>
-            <br>
+               
+           
+            </div>
+           
+            <div class="centraliza2">
+            <a class="cancelar" id="cancelar"  href="index.php">Cancelar</a>
+            <button class="cadastrar" id="cadastrar" onclick="confirmaSenha2()"  type="submit">Cadastrar</button>
+            </div>
+            
+            
 
         </form>
+            </center>
+        
+           
+           
 
     </div> 
 
@@ -354,7 +400,7 @@ include_once("funcoes/conexao.php");
             document.getElementById("disc").style.display = 'none';
             document.getElementById("usuario").style.display = 'none';
             document.getElementById("rh").style.display = 'none';
-            
+             document.getElementById("esqueceuSenha").style.display = 'none';
             document.getElementById("menumobile").style.display = 'none';
         }
 
@@ -413,12 +459,27 @@ include_once("funcoes/conexao.php");
             document.getElementById("rh").style.display = 'none';
             
             document.getElementById("menumobile").style.display = 'none';
+            document.getElementById("esqueceuSenha").style.display = 'none';
+        }
+        
+        
+         function mostraEsqueceuSenha() {
+
+            document.getElementById("esqueceuSenha").style.display = 'block';
+            document.getElementById("escolhaCadastro").style.display = 'none';
+            document.getElementById("login").style.display = 'none';
+            document.getElementById("disc").style.display = 'none';
+            document.getElementById("usuario").style.display = 'none';
+            document.getElementById("rh").style.display = 'none';
+            
+            document.getElementById("menumobile").style.display = 'none';
         }
 
         function mostraUsuario() {
             document.getElementById("disc").style.display = 'none';
             document.getElementById("usuario").style.display = 'block';
             document.getElementById("escolhaCadastro").style.display = 'none';
+             
 
         }
 
@@ -466,6 +527,8 @@ include_once("funcoes/conexao.php");
               
               
           }else {
+              
+              
 
                     document.getElementById("alerta").style.background = 'red';
             document.getElementById("alerta").style.padding = '20px';
@@ -692,13 +755,53 @@ include_once("funcoes/conexao.php");
          
          }
         ?>
+        
+        
+         <?php
+        //alerts codigo rh.
+        if (isset($_SESSION['codigonaoexiste'])) {
+
+        ?><script>
+        
+         document.getElementById("alerta").style.background = 'red';
+            document.getElementById("alerta").style.padding = '20px';
+             document.getElementById("alerta").innerHTML = "Não existe nenhum RH/Psicólogo com este código, por favor tente novamente!";
+            document.getElementById("usuario").scrollTo(0, 0);
+            mostraUsuario();
+        </script><?php
+        
+         unset($_SESSION['codigonaoexiste']);
+         
+         }
+        ?>
+        
+         <?php
+        //alerts cadastro usuario.
+        if (isset($_SESSION['codigoexiste'])) {
+
+        ?><script>
+        
+         document.getElementById("alerta_rh").style.background = 'red';
+            document.getElementById("alerta_rh").style.padding = '20px';
+             document.getElementById("alerta_rh").innerHTML = "O código de acesso já existe, tente outro!";
+            document.getElementById("rh").scrollTo(0, 0);
+            mostraRh();
+        </script><?php
+        
+         unset($_SESSION['codigoexiste']);
+         
+         }
+        ?>
     
     
     
     
     
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> 
 
     <script src='js/index.js' ></script>
+    
+    <script src='js/particle.js' ></script>
 
 
 

@@ -1,0 +1,13 @@
+/* ---- reset ---- */ canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container ---- */ 
+
+#particles-js{ 
+    position: absolute;
+    width: 98%; 
+    height: 90%; 
+    background-image: url(""); 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: 50% 50%;
+} 
+
+
