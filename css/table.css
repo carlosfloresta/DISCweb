@@ -1,0 +1,56 @@
+table th , table td{
+    text-align: center;
+    padding:  15px !important;
+}
+
+table tr:nth-child(even){
+    background-color: #C0D1A3;
+}
+
+table tr{
+     color: #333;
+     font-weight: bold;
+}
+
+th {
+    background: #486541;
+    color: #fff;
+}
+
+.pagination {
+    margin: 0;  
+}
+
+.pagination li:hover{
+    cursor: pointer;
+}
+
+.header_wrap {
+    padding:30px 0;
+}
+.num_rows {
+    width: 20%;
+    float:left;
+}
+.tb_search{
+    width: 20%;
+    float:right;
+}
+.pagination-container {
+    width: 70%;
+    float:left;
+}
+
+.rows_count {
+    width: 20%;
+    float:right;
+    text-align:right;
+    color: #000;
+}
+
+.container{
+    
+    
+    width: 90%;
+}
+

@@ -14,6 +14,9 @@ include_once("funcoes/conexao.php");
         <link rel="stylesheet" href="css/index.css">
         <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/particule.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
     </head>
     <body>
 
@@ -25,7 +28,7 @@ include_once("funcoes/conexao.php");
             
             <a class="titulo2" style="font-family: 'Pacifico', cursive;" href="index.php">Disc</a>
             
-             <a class="botaoDuvida">?</a>
+            <a class="botaoDuvida" href="privacidade.php">?</a>
             <a class="botao"  onclick="mostraLogin()">LOGIN</a>
             <a class="botao" onclick="mostraCadastro()">CADASTRAR</a>
           
@@ -38,7 +41,7 @@ include_once("funcoes/conexao.php");
             
             <a class="titulo2" style="font-family: 'Pacifico', cursive;" href="index.php">Disc</a>
             
-             <a class="botaoDuvida">?</a>
+            <a class="botaoDuvida" href="privacidade.php">?</a>
   
         </nav>
         
@@ -217,7 +220,7 @@ include_once("funcoes/conexao.php");
             <h1>Cadastrar</h1>
         
         <div class="escolhacadastro" >
-            <div class="links"><a href="index.php" style="text-decoration: none">Home</a><span> > </span><a>Cadastrar</a> </div> 
+            <div class="links"><a href="index.php" style="text-decoration: none; font-size: 20px; color:#fff">Home</a><span> > </span><a style="font-size: 20px">Cadastrar</a> </div> 
             <br><br>
 
             <a class="opcao" onclick="mostraUsuario()">Candidato(a)</a>
@@ -227,7 +230,33 @@ include_once("funcoes/conexao.php");
         </div>
 
     </div>
-    <!--        seleção de cadastro-->  
+    <!--        seleção de cadastro--> 
+    
+    <style>
+        
+        
+        
+ .submit-lente {
+  position:absolute;
+  top:0; right:10px;
+  z-index:10;
+  border:none;
+  background:transparent;
+  outline:none;
+}
+
+.submit-line {
+  position: relative;
+  width: 100%;
+}
+
+.submit-line input {
+  width: 100%;
+}  
+        
+        
+        
+    </style>
 
     <!--    form usuario-->
 
@@ -259,7 +288,14 @@ include_once("funcoes/conexao.php");
             
                 
                  <label>Código de Acesso:</label>
-                <input type="text" name="codigo_acesso_rh" required id="codigo_acesso_rh">
+                 
+                 <div class="submit-line">
+  <input type="text" name="codigo_acesso_rh" required id="codigo_acesso_rh">
+  <a class="submit-lente" href="#" onMouseOver="toolTip('Este é o código que o RH/Psicólogo te informou, caso não tenha o mesmo entre em contato com o responsável, solicitando o código de acesso para realizar a avaliação DISC.', 200)" onMouseOut="toolTip()">
+   <i class="fa fa-question-circle" style="font-size:35px; color:#fff"></i>
+  </a>
+</div>
+               
 
             </div>
            
@@ -268,20 +304,22 @@ include_once("funcoes/conexao.php");
                 <label>Email:</label>
                 <input type="email" name="email_usuario" required id="email_usuario">
                 <input style="display: none" type="password" name="senha_usuario" required id="senha_usuario">
-                <label>Senha:</label>
-                <input type="password"  required id="senha1"  maxlength="25">
+                <label>Senha:</label><label style="font-size: 12px">(Mínimo: 8 Caracteres)</label>
+                <input type="password" minlength="8"  required id="senha1"  maxlength="25">
                
                 <label>Confirme a senha:</label>
-                <input type="password" required id="senha2"  maxlength="25">
+                <input type="password" minlength="8" required id="senha2"  maxlength="25">
             </div>
                 
                 </div>
-               
             
+            <div style=" margin: 0 auto; width: 50%; height: 10%; ">
   
-            
-            
+                <label style=" font-size: 12px; ">   <input style="width: 20px; margin-top: 20px;" type="checkbox" required> Li e concordo com os <a target="_blanck" style="font-size: 12px; color:#fff;" href="privacidade.php">Termos de Uso.</a></label>
+</div>
+ 
             <div class="centraliza2">
+               
                
             <a class="cancelar" id="cancelar"  href="index.php">Cancelar</a>
             <button class="cadastrar" id="cadastrar" onclick="confirmaSenha()" type="submit">Cadastrar</button>
@@ -290,7 +328,7 @@ include_once("funcoes/conexao.php");
              
 <br>
 <br>
-
+    
         </form>
             
             </center>
@@ -342,7 +380,13 @@ include_once("funcoes/conexao.php");
                 <div class="empresa">
                      <center>  <p>RH/Psicólogo</p></center>
                     <label>Código de Acesso:</label>
-                <input type="text" name="codigo_rh" required id="codigo_rh">
+                                   <div class="submit-line">
+  <input type="text" name="codigo_rh" required id="codigo_rh">
+  <a class="submit-lente" href="#" onMouseOver="toolTip('Crie um código único que deverá ser informado para o candidato, para que o mesmo possa fazer o cadastro, e a avaliação ser direcionada para seu perfil', 200)" onMouseOut="toolTip()">
+   <i class="fa fa-question-circle" style="font-size:35px; color:#fff"></i>
+  </a>
+</div>
+                
                     
                 </div>
            
@@ -355,13 +399,18 @@ include_once("funcoes/conexao.php");
                
                 <input type="password" style="display: none" name="senha_rh" required id="senha_rh">
                 
-                <label>Senha:</label>
-                <input type="password"  required id="senha3" maxlength="25" >
+                <label>Senha:</label><label style="font-size: 12px">(Mínimo: 8 Caracteres)</label>
+                <input type="password" minlength="8"  required id="senha3" maxlength="25" >
              
                 <label>Confirme a senha:</label>
-                <input type="password" required id="senha4" maxlength="25">
+                <input type="password" minlength="8" required id="senha4" maxlength="25">
                 
             </div>
+                
+                     <div style=" margin: 0 auto; width: 50%; height: 10%; ">
+  
+                <label style=" font-size: 12px; ">   <input style="width: 20px; margin-top: 20px;" type="checkbox" required> Li e concordo com os <a target="_blanck" style="font-size: 12px; color:#fff;" href="privacidade.php">Termos de Uso.</a></label>
+</div>
                
            
             </div>
@@ -800,7 +849,7 @@ include_once("funcoes/conexao.php");
 <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> 
 
     <script src='js/index.js' ></script>
-    
+    <script type="text/javascript" src="js/tooltip.js"></script>
     <script src='js/particle.js' ></script>
 
 

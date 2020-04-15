@@ -56,23 +56,8 @@ function email($maior,$email,$telefone,$nome,$emailCandidato,$segundoMaior,$corf
       $headers .= 'From:'.$nome.'<'.$emailCandidato.'>';
   //$headers .= "Bcc: $EmailPadrao\r\n";
    
-  $enviaremail = mail($destino, $assunto, $arquivo, $headers);
-  if($enviaremail){
-      
-      
-             echo"<script language='javascript' type='text/javascript'>alert('Teste enviado, obrigado!');</script>";
- 
+  mail($destino, $assunto, $arquivo, $headers);
   
-//  $mgm = "E-MAIL ENVIADO COM SUCESSO! <br> O link será enviado para o e-mail fornecido no formulário";
-//  echo " <meta http-equiv='refresh' content='10;URL=contato.php'>";
-  } else {
-      
-       echo"<script language='javascript' type='text/javascript'>alert('Erro ao enviar email, tente novamente!');</script>";
-  }
-//  $mgm = "ERRO AO ENVIAR E-MAIL!";
-//  echo "";
-//  }  
-    
     
     
     

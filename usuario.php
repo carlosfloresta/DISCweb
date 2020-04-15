@@ -22,10 +22,10 @@
             
         </nav>  
         
-         <div id="particles-js"></div>
+<!--         <div id="particles-js"></div>-->
         
         <h1 style="font-family: 'Pacifico', cursive;">Bem-Vindo, <?php echo $login_session;  ?>.</h1>
-        <h2>O TESTE DISC É COMPOSTO POR 28 QUADRANTES.<BR> ESCOLHA UMA OPÇÃO QUE MAIS SE PAREÇA COM VOCÊ E UMA QUE MENOS SE ADEQUE AO SEU PERFIL.</h2>
+        <h2>O TESTE DISC É COMPOSTO POR 28 QUADRANTES.<BR> ESCOLHA UMA OPÇÃO QUE MAIS SE PAREÇA COM VOCÊ E UMA QUE MENOS SE ADEQUE AO SEU PERFIL.<br>EM CASO ESPECIAL FOI FEITA UMA DEMO PARA O TCC, COMPOSTA POR 7 QUADRANTES.</h2>
        
         <?php
         $id = $_SESSION['usuarioId'];
@@ -37,13 +37,15 @@
         <div style="display: none"  id="empresa_usuario" class="selectrh">
             <form method="POST" action="funcoes/alterarempresa.php">
             
-             <?php $sql  = mysqli_query($conn, "select * from rh");?>
+<!--             <?php $sql  = mysqli_query($conn, "select * from rh");?>
             <select name="empresa_usuario" id="empresa_usuario"><?php
               while($resultado = mysqli_fetch_array($sql)){ ?>     
                   <option value="<?=  $resultado['id'] ?>"><?php echo $resultado['nome']; ?></option>
                   <?php } ?>
     
-                </select>
+                </select>-->
+
+<input style="height: 30px; margin: 10px; width: 200px;" name="empresa_usuario" id="empresa_usuario" >
             
           
             <button class="botaoinicairteste" type="submit">Alterar</button>
@@ -53,7 +55,7 @@
         
          <br><br><br>
          <form method="POST" action="funcoes/verificateste.php">
-             <center> <button type="submit" class="botaoinicairteste" id="iniciar">INICIAR TESTE</button></center>
+             <center> <button type="submit" class="botaoinicairteste" id="iniciar">INICIAR TESTE - Demo</button></center>
          </form>
     <script>
     

@@ -1,7 +1,10 @@
 <?php
-
-session_start(); 
- include_once("conexao.php");  
+header('Content-Type: application/json charset=utf-8');
+ $response = array();
+ $response["erro"] = true;
+ if($_SERVER['REQUEST_METHOD'] == 'POST'){
+       include 'conexao.php';
+  
 
  $email = mysqli_real_escape_string($conn, $_POST['email']);
 
@@ -16,7 +19,7 @@ if($resultado_sql){
   
     
     if(mysqli_affected_rows($conn) > 0){
-        
+         $response["erro"] = false;
         $arquivo = "
  
     <html>
@@ -39,11 +42,11 @@ if($resultado_sql){
        $enviaremail = mail($email, $assunto, $arquivo, $headers);
         if($enviaremail){
             
-                     echo"<script language='javascript' type='text/javascript'>alert('enviado com sucesso! ');window.location.href='../index.php'</script>";
+           
+             $response["mensagem"] = "Link para alterar senha enviado com sucesso!";
 
         }else{
-            
-                  echo"<script language='javascript' type='text/javascript'>alert('erro ao enviar,tente novamente! ');window.location.href='../index.php'</script>";
+             $response["mensagem"] = "Erro ao enviar email, tente novamente!";
 
             
         }
@@ -51,7 +54,11 @@ if($resultado_sql){
         
     }else{
         
-         echo"<script language='javascript' type='text/javascript'>alert('Erro! ');window.location.href='../index.php'</script>";
+         $response["erro"] = true;
+        
+         $response["mensagem"] = "Erro ao gerar token para alterar senha, tente novamente!";
+        
+       
 
         
     }
@@ -60,14 +67,17 @@ if($resultado_sql){
     
 }else{
     
-    
- echo"<script language='javascript' type='text/javascript'>alert('Erro! Email não encontrado! ');window.location.href='../index.php'</script>";
-
+     $response["erro"] = true;
+$response["mensagem"] = "Email não encontrado em nossos registros!";
     
 }
 
-mysqli_close($conn); 
+$conn->close();
 
+ }
+
+
+echo json_encode($response);
 
 ?>
 

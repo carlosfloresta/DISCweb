@@ -26,11 +26,12 @@
         
               
     
-        header("Location: ../erro.php");
+                      echo"<script language='javascript' type='text/javascript'>alert('Erro! Você já fez o teste para a empresa selecionada, verifique o código ou entre em contato com a empresa para poder efetuar o teste novamente!');window.location.href='../usuario.php'</script>";
+
         
         
             }else{
-                header("Location: ../teste.php");
+                header("Location: ../teste_1.php");
               
                 
             }
