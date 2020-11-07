@@ -3,6 +3,11 @@
 This project is a behavioral assessment website called DISC, it was developed for the TCC of the Technical course in Systems Development at ETEC Irmã Agostina.
 
 ![](readme/1.png)
+<p float="left">
+  <img src="readme/2.png" width="100" />
+  <img src="readme/3.png" width="100" /> 
+  <img src="readme/4.png" width="100" />
+</p>
 
 ## Installation
 
