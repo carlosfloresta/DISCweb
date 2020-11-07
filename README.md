@@ -20,9 +20,9 @@ This project is a behavioral assessment website called DISC, it was developed fo
 - RH/Psicologo
 
 <p float="left">
-  <img src="readme/8.png" width="300" />
-  <img src="readme/9.png" width="300" /> 
-   <img src="readme/10.png" width="300" /> 
+  <img src="readme/8.png" width="250" />
+  <img src="readme/9.png" width="250" /> 
+   <img src="readme/10.png" width="250" /> 
 </p>
 
 
