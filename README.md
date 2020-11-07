@@ -4,10 +4,10 @@ This project is a behavioral assessment website called DISC, it was developed fo
 
 ![](readme/1.png)
 <p float="left">
-  <img src="readme/2.png" width="210" />
-  <img src="readme/3.png" width="210" /> 
-  <img src="readme/4.png" width="210" />
-   <img src="readme/5.png" width="210" />
+  <img src="readme/2.png" width="205" />
+  <img src="readme/3.png" width="205" /> 
+  <img src="readme/4.png" width="205" />
+   <img src="readme/5.png" width="205" />
 </p>
 
 - Candidato
