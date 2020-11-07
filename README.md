@@ -24,4 +24,5 @@ localhost/DISCweb
 
 
 ## License
-Restricted! Any part of the code cannot be used without my permission, subject to local laws
+- You can use the code for study.
+- You may not use it for commercial purposes, subject to penalties under local law.
