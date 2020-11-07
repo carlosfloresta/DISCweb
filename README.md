@@ -4,7 +4,6 @@ This project is a behavioral assessment website called DISC, it was developed fo
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
 ```bash
 Start xampp or similar
