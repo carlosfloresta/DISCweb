@@ -1,20 +1,14 @@
 <?php
-
 session_start(); 
  include_once("conexao.php");  
-
  $email = mysqli_real_escape_string($conn, $_POST['email']);
-
  $sql = mysqli_query($conn,"SELECT * FROM login WHERE email = '$email'");
 $resultado_sql = mysqli_fetch_assoc($sql);
 
 if($resultado_sql){
     
     $token = md5(uniqid(rand(), true));
-    
     $sql2 = mysqli_query($conn,"UPDATE login SET token = '$token' WHERE email = '$email'");
-  
-    
     if(mysqli_affected_rows($conn) > 0){
         
         $arquivo = "
@@ -29,9 +23,7 @@ if($resultado_sql){
 
     </html>
   ";
-        
         $assunto = "Recuperação de Senha - DISC";
-        
         $headers  = 'MIME-Version: 1.0' . "\r\n";
       $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
       $headers .= 'From: DISC<contato@disc.cf>';
@@ -44,30 +36,17 @@ if($resultado_sql){
         }else{
             
                   echo"<script language='javascript' type='text/javascript'>alert('erro ao enviar,tente novamente! ');window.location.href='../index.php'</script>";
-
-            
         }
-
-        
     }else{
         
          echo"<script language='javascript' type='text/javascript'>alert('Erro! ');window.location.href='../index.php'</script>";
-
-        
     }
-    
-    
-    
+ 
 }else{
-    
-    
  echo"<script language='javascript' type='text/javascript'>alert('Erro! Email não encontrado! ');window.location.href='../index.php'</script>";
-
-    
 }
 
 mysqli_close($conn); 
-
 
 ?>
 

@@ -2,15 +2,10 @@
 session_start();
 include_once("conexao.php");
 include_once ('email.php');
-
-
 $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
 $id_login = $_SESSION['usuarioId'];
                 $sql3 = mysqli_query($conn, "SELECT usuario.*, teste.* FROM usuario INNER JOIN teste ON usuario.id = teste.id_usuario INNER JOIN rh ON teste.id_empresa = rh.id where usuario.id = '$id' and rh.id_login = '$id_login' ORDER BY usuario.id DESC  ");
                  $resultado = mysqli_fetch_assoc($sql3);
-                
-               
-                 
                  $d = $resultado['d'];
                  $i = $resultado['i'];
                  $s = $resultado['s'];
@@ -55,22 +50,11 @@ $id_login = $_SESSION['usuarioId'];
                            $mensagem2 ='Cauteloso<br>São pessoas que possuem uma maior facilidade em lidar com regras e processos. São metódicas, analíticas, técnicas e determinadas. Elas seguem ordens e normas, e realizam suas tarefas com um cuidado exemplar. Por serem muito perfeccionistas, tendem a se perder em detalhes e são extremamente críticas — tanto com elas mesmas, quanto com as outras pessoas.';
                            $corfundo2 = '#F9BF3B';
            }                 
-                 
-                 
-                 
-                 
-                 
-
-
 
 $acao = filter_input(INPUT_POST, 'acao', FILTER_SANITIZE_STRING);
-
 switch ($acao) {
-   
     case 'form_ver':
-
         ?>
-        
          <form action="" name="form_ver" method="post">
              
              <style>
@@ -137,7 +121,6 @@ $telefone_usuario = $resultado['telefone'];
                  
   
                  ?>
-
 <form action="funcoes/enviaemailrh.php" name="form_email" method="post">
     <h2>Candidato: <?php echo $resultado['nome'] ?></h2>
     <br>
@@ -145,8 +128,6 @@ $telefone_usuario = $resultado['telefone'];
    <div>
                 <label>Email:</label>
                 <input type="email" name="email" required id="email">
-                
-                
                 <input hidden="none" type="text" name="nome" required id="nome" value="<?php echo $nome_usuario ?>">
                 <input hidden="none" type="text" name="mensagem" required id="mensagem" value="<?php echo $mensagem ?>">
                 <input hidden="none" type="text" name="telefone" required id="telefone" value="<?php echo $telefone_usuario ?>">
@@ -158,56 +139,38 @@ $telefone_usuario = $resultado['telefone'];
                   <input hidden="none" type="text" name="i" required id="i" value="<?php echo $i ?>">
                   <input hidden="none" type="text" name="s" required id="s" value="<?php echo $s ?>">
                   <input hidden="none" type="text" name="c" required id="c" value="<?php echo $c ?>">
-                
                 <button style="color: #000;"   id="cadastrar" type="submit">Enviar Teste</button>
 
             </div>
-            
-    
-    
+  
 </form>
-
-
 <?php
             
             break;
-        
-        
+ 
         case 'form_excluir':
  
             ?>
 
 <div>
-    
     <style>
-        
         .botoesexcluir{
              padding: 10px;
            border: 1px solid #000;
            text-decoration:none;
            color:#fff;
            font-size: 20px;
-            
         }
-        
-        
+ 
     </style>
     <h2>Candidato: <?php echo $resultado['nome'] ?></h2><br><br>
     
     <center> <a class="botoesexcluir" style="background-color: #49A55E" href="funcoes/excluirteste.php?id=<?php echo $id ?>">Excluir</a>
     <a class="botoesexcluir" style="background-color: #F32D2D" href="">Cancelar</a> </center>
-    
-    
-    
-    
+ 
 </div>
-
-
-           
         <?php
-            
-            break;
-                
+            break;          
 }    
 
  mysqli_close($conn);

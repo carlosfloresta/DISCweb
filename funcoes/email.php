@@ -1,11 +1,6 @@
 <?php
-
-
-            
-
 function email($maior,$email,$telefone,$nome,$emailCandidato,$segundoMaior,$corfundo,$corfundo2,$d,$i,$s,$c){
 
-  
   // Compo E-mail
   $arquivo = "
  
@@ -40,9 +35,6 @@ function email($maior,$email,$telefone,$nome,$emailCandidato,$segundoMaior,$corf
        
     </html>
   ";
-
-
-
 //enviar
    
   // emails para quem será enviado o formulário
@@ -58,8 +50,6 @@ function email($maior,$email,$telefone,$nome,$emailCandidato,$segundoMaior,$corf
    
   $enviaremail = mail($destino, $assunto, $arquivo, $headers);
   if($enviaremail){
-      
-      
              echo"<script language='javascript' type='text/javascript'>alert('Teste enviado, obrigado!');</script>";
  
   
@@ -72,10 +62,7 @@ function email($maior,$email,$telefone,$nome,$emailCandidato,$segundoMaior,$corf
 //  $mgm = "ERRO AO ENVIAR E-MAIL!";
 //  echo "";
 //  }  
-    
-    
-    
-    
+
 }
 
 ?>

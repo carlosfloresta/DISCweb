@@ -56,9 +56,6 @@ $sql3 = mysqli_query($conn, "SELECT usuario.*, teste.* FROM usuario INNER JOIN t
                            $corfundo2 = '#F9BF3B';
            }
 
-
-
-
 ?>
 
 <html>
@@ -100,8 +97,6 @@ $sql3 = mysqli_query($conn, "SELECT usuario.*, teste.* FROM usuario INNER JOIN t
              </style>
         
     </head>
-    
-    
     <body onload="Javascript:window.print();">
         
         
@@ -111,42 +106,26 @@ $sql3 = mysqli_query($conn, "SELECT usuario.*, teste.* FROM usuario INNER JOIN t
 
 
 <div>
-             
-             
-            
              <h2>Nome:<?php echo $resultado['nome'] ?></h2>
              <h2>Email:<?php echo $resultado['email'] ?></h2>
              <h2>Telefone/celular:<?php echo $resultado['telefone'] ?></h2>
-             
              <h3>Este candidato é mais...</h3>
-             
              <div class="estilo">
              
-      
             <p for="nome"><?php echo $mensagem ?></p><br>
-            
-          
-            
+
              </div>
-             
-             
+
              <h3>Com ascendente...</h3>
-             
              <div class="estilo2">
-             
                <p for="nome"><?php echo $mensagem2 ?></p><br>
             
              </div>
-             
              <br>
              <br>
              
              <img style="width:50%" src="grafico.php?d=<?php echo $d ?>&i=<?php echo $i ?>&s=<?php echo $s ?>&c=<?php echo $c ?>">
-             
-             
-
         </div>
-
 </body>
 </html>
 

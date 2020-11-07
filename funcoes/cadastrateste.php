@@ -20,12 +20,6 @@ $i = $quadrado_mais - $quadrado_menos;
 $s = $triangulo_mais - $triangulo_menos;
 $c = $musica_mais - $musica_menos;
 
-              
-
-
-
-
-
 // maior
                  if($d>$i && $d>$s && $d>$c ){    
 
@@ -122,5 +116,3 @@ if (isset($resultado4)) {
 
   mysqli_close($conn);
 ?>
-
-
